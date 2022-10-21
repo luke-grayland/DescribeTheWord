@@ -1,20 +1,15 @@
 import React from 'react';
 import {View, Text, StyleSheet} from "react-native";
+import {TitleStyles} from "../../resources/styles/components/TitleStyles";
 
-const Title = (props) => {
+const Title = ({title, fontSize}) => {
+
     return (
-        <View>
-            <Text style={styles.title}>{props.title}</Text>
+        <View style={TitleStyles.titleView}>
+            <Text style={{...TitleStyles.title, ...fontSize={fontSize}}}>{title}</Text>
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    title: {
-        fontFamily: 'notoserif',
-        fontSize: 30
-    }
-})
 
 export default Title
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button} from "react-native";
+import {View, Text, StyleSheet, Button, TouchableOpacity} from "react-native";
+import {PlayStartButtonStyles} from "../../resources/styles/components/PlayStartButtonStyles";
 
 const PlayStartButton = ({ navigation, label, target }) => {
 
@@ -9,19 +10,13 @@ const PlayStartButton = ({ navigation, label, target }) => {
 
     return (
         <View>
-            <Button title={label}
-                    style={styles.button}
-                    onPress={handleStartButton}
-            ></Button>
+            <TouchableOpacity style={PlayStartButtonStyles.button} onPress={handleStartButton}>
+                <Text style={PlayStartButtonStyles.text}>{label}</Text>
+            </TouchableOpacity>
         </View>
     )
 }
 
-const styles = StyleSheet.create({
-    button: {
-
-    }
-})
 
 export default PlayStartButton
 

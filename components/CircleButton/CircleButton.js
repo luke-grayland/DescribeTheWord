@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {View, Text, StyleSheet, Button, TouchableOpacity} from "react-native";
+import {CircleButtonStyles} from "../../resources/styles/components/CircleButtonStyles";
 
 const CircleButton = ({ label, navigation }) => {
 
@@ -11,26 +12,14 @@ const CircleButton = ({ label, navigation }) => {
     return (
         <View>
             <TouchableOpacity
-                style={styles.circle}
+                style={CircleButtonStyles.circle}
                 onPress={click}
             >
-                <Text>{label}</Text>
+                <Text style={CircleButtonStyles.text}>{label}</Text>
             </TouchableOpacity>
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    circle: {
-        width: 100,
-        height: 100,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 10,
-        borderRadius: 100,
-        backgroundColor: 'orange',
-    }
-})
 
 export default CircleButton
 
