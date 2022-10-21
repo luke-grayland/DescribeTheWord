@@ -5,14 +5,16 @@ import Colours from "../../Colours";
 export const TitleStyles = StyleSheet.create({
 
     titleView: {
-        width: '60%',
+        flexDirection: 'column',
         alignItems: 'center',
-
+        alignSelf: 'center',
 
     },
     title: {
         fontFamily: 'notoserif',
         fontSize: Fonts.H1_FONT_SIZE,
-        color: 'white'
+        color: 'white',
+        textAlign: 'center'
+
     }
 });

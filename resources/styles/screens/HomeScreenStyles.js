@@ -4,17 +4,17 @@ import Colours from "../../Colours";
 export const HomeScreenStyles = StyleSheet.create({
     homeScreenView: {
         flex: 1,
-        backgroundColor: Colours.BACKGROUND
-    },
-    titleView: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
+        backgroundColor: Colours.BACKGROUND,
     },
     controlsView: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    titleView: {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        height: '50%'
     }
 })
 

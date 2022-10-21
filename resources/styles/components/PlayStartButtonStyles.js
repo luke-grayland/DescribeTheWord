@@ -7,15 +7,22 @@ export const PlayStartButtonStyles = StyleSheet.create({
         height: 50,
         width: 150,
         backgroundColor: Colours.PLAY_BUTTON,
+        justifyContent: 'space-evenly',
         alignContent: 'center',
-        justifyContent: 'center',
         margin: 20,
         borderRadius: 7,
+        flexDirection: 'row',
 
 
     },
     text: {
         fontSize: Fonts.H2_FONT_SIZE,
-        textAlign: 'center'
+        textAlign: 'center',
+        alignSelf: 'center'
+    },
+    playIcon: {
+        height: 25,
+        width: 25,
+        alignSelf: 'center'
     }
 })
