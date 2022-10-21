@@ -4,7 +4,7 @@ import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title
 import {InfoScreenStyles} from "../../resources/styles/screens/InfoScreenStyles";
 import Fonts from "../../resources/Fonts";
 import {InfoCircleStyles} from "../../resources/styles/components/InfoCircleStyles";
-import AppConstants from "../../resources/AppConstants";
+import Strings from "../../resources/Strings";
 import {GenericStyles} from "../../resources/styles/components/GenericStyles";
 
 const InfoScreen = () => {
@@ -12,7 +12,7 @@ const InfoScreen = () => {
         <View style={InfoScreenStyles.infoScreenView}>
             <View style={InfoScreenStyles.titleView}>
                 <Image source={require('../../resources/images/info_icon.png')} style={InfoCircleStyles.infoIcon}/>
-                <Title title={AppConstants.INFO_SCREEN_HEADER} fontSize={Fonts.H1_FONT_SIZE}/>
+                <Title title={Strings.INFO_SCREEN_HEADER} fontSize={Fonts.H1_FONT_SIZE}/>
             </View>
             <View style={{...InfoScreenStyles.contentView, ...GenericStyles.shadow}}>
                 <Text style={InfoScreenStyles.text}>Rule 1</Text>

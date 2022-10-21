@@ -4,7 +4,7 @@ import Colours from "../../Colours";
 export const InfoScreenStyles = StyleSheet.create({
     infoScreenView: {
         flex: 1,
-        backgroundColor: Colours.BACKGROUND,
+        backgroundColor: Colours.BACKGROUND_PRIMARY,
         alignItems: 'center',
         justifyContent: "center"
 
