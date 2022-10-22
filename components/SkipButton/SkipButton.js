@@ -1,12 +1,14 @@
 import React from 'react';
-import {View, TouchableOpacity, Image} from "react-native";
+import {View, TouchableOpacity, Image, Vibration} from "react-native";
 import {GenericStyles} from "../../resources/GenericStyles";
 import {SkipButtonStyles} from "./SkipButtonStyles";
+import AppConstants from "../../resources/AppConstants";
 
 const SkipButton = () => {
 
     const click = () => {
-        console.log('Skip')
+        Vibration.vibrate(AppConstants.VIBRATION_TIME)
+        console.log('Word Skipped')
     }
 
     return (

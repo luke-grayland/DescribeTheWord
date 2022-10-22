@@ -3,7 +3,7 @@ import {View, Text} from "react-native";
 import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title/Title.js';
 import PlayStartButton from "../../components/PlayStartButton/PlayStartButton";
 import RouteNames from "../../resources/RouteNames";
-import Strings from "../../resources/Strings";
+import AppConstants from "../../resources/AppConstants";
 import Fonts from "../../resources/Fonts";
 import {TitleStyles} from "../../components/Title/TitleStyles";
 import {CategoryScreenStyles} from "./CategoryScreenStyles";
@@ -15,7 +15,7 @@ const CategoryScreen = ({navigation}) => {
         1: 'Test Word 1',
         2: 'Test Word 2',
         3: 'Test Word 3'
-    } // export these to consts
+    }//fetch categories from DB once integrated
 
     const [category, setCategory] = useState('Object')
 
@@ -32,7 +32,7 @@ const CategoryScreen = ({navigation}) => {
     return (
         <View style={CategoryScreenStyles.categoryScreenView}>
             <View style={{...TitleStyles.titleView, ...CategoryScreenStyles.categoryScreenSection}}>
-                <Title title={Strings.CATEGORY_SCREEN_HEADER} fontSize={Fonts.H2_FONT_SIZE} style={TitleStyles.title}/>
+                <Title title={AppConstants.CATEGORY_SCREEN_HEADER} fontSize={Fonts.H2_FONT_SIZE} style={TitleStyles.title}/>
             </View>
             <View style={{
                 ...CategoryScreenStyles.categoryScreenSection,

@@ -1,5 +1,6 @@
 import {StyleSheet} from "react-native";
 import Colours from "./Colours";
+import AppConstants from "./AppConstants";
 
 export const GenericStyles = StyleSheet.create({
     shadow: {
@@ -13,11 +14,16 @@ export const GenericStyles = StyleSheet.create({
         elevation: 5,
     },
     contentBox: {
-        height: '15%',
-        width: '60%',
-        borderRadius: 8,
+        marginTop: '10%',
+        marginBottom: '10%',
+        width: '80%',
+        height: '20%',
+        borderRadius: AppConstants.BORDER_RADIUS_LARGE,
         margin: 10,
-        backgroundColor: Colours.PLAY_BUTTON,
+        backgroundColor: Colours.TEXT,
         justifyContent: 'center',
+        alignSelf: 'center',
+        alignItems: 'center'
     },
+
 })

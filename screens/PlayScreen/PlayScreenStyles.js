@@ -19,12 +19,14 @@ export const PlayScreenStyles = StyleSheet.create({
         alignItems: 'center',
     },
     score: {
-        textAlign: 'center'
+        textAlign: 'center',
+        width: '25%',
     },
     word: {
-        textAlign: 'center'
+        textAlign: 'center',
     },
     timer: {
-        textAlign: 'center'
+        textAlign: 'center',
+        width: '50%'
     }
 })

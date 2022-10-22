@@ -4,7 +4,7 @@ import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title
 import PlayStartButton from "../../components/PlayStartButton/PlayStartButton";
 import RouteNames from "../../resources/RouteNames";
 import {LoadingScreenStyles} from "./LoadingScreenStyles";
-import StringLiterals from "../../resources/Strings";
+import StringLiterals from "../../resources/AppConstants";
 import Fonts from "../../resources/Fonts";
 import {TitleStyles} from "../../components/Title/TitleStyles";
 
