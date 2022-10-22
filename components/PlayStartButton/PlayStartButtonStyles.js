@@ -1,6 +1,6 @@
 import {StyleSheet} from "react-native";
-import Fonts from "../../Fonts";
-import Colours from "../../Colours";
+import Fonts from "../../resources/Fonts";
+import Colours from "../../resources/Colours";
 
 export const PlayStartButtonStyles = StyleSheet.create({
     button: {
@@ -12,6 +12,7 @@ export const PlayStartButtonStyles = StyleSheet.create({
         margin: 20,
         borderRadius: 7,
         flexDirection: 'row',
+        alignSelf: 'center'
 
 
     },

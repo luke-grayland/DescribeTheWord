@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {View, Text, StyleSheet, Button, TouchableOpacity, Image} from "react-native";
-import {CorrectButtonStyles} from "../../resources/styles/components/CorrectButtonStyles";
-import {GenericStyles} from "../../resources/styles/components/GenericStyles";
+import {CorrectButtonStyles} from "./CorrectButtonStyles";
+import {GenericStyles} from "../../resources/GenericStyles";
 
 const CorrectButton = () => {
 
@@ -15,7 +15,7 @@ const CorrectButton = () => {
                 style={{...CorrectButtonStyles.button , ...GenericStyles.shadow}}
                 onPress={click}
             >
-                <Image source={require('../../resources/images/tick_icon.png')} style={CorrectButtonStyles.icon}/>
+                <Image source={require('../../resources/images/tick_icon_2.png')} style={CorrectButtonStyles.icon}/>
             </TouchableOpacity>
         </View>
     )

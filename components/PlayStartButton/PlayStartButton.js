@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Button, TouchableOpacity, Image} from "react-native";
-import {PlayStartButtonStyles} from "../../resources/styles/components/PlayStartButtonStyles";
-import {GenericStyles} from "../../resources/styles/components/GenericStyles";
+import {PlayStartButtonStyles} from "./PlayStartButtonStyles";
+import {GenericStyles} from "../../resources/GenericStyles";
 
 const PlayStartButton = ({ navigation, label, target }) => {
 

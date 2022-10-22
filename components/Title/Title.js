@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet} from "react-native";
-import {TitleStyles} from "../../resources/styles/components/TitleStyles";
+import {TitleStyles} from "./TitleStyles";
 
 const Title = ({title, fontSize}) => {
 

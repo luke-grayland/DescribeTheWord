@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, Image} from "react-native";
 import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title/Title.js';
-import {InfoScreenStyles} from "../../resources/styles/screens/InfoScreenStyles";
+import {InfoScreenStyles} from "./InfoScreenStyles";
 import Fonts from "../../resources/Fonts";
-import {InfoCircleStyles} from "../../resources/styles/components/InfoCircleStyles";
+import {InfoCircleStyles} from "../../components/InfoCircle/InfoCircleStyles";
 import Strings from "../../resources/Strings";
-import {GenericStyles} from "../../resources/styles/components/GenericStyles";
+import {GenericStyles} from "../../resources/GenericStyles";
 
 const InfoScreen = () => {
     return (

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {View, Text, StyleSheet, Button, TouchableOpacity, Image} from "react-native";
-import {InfoCircleStyles} from "../../resources/styles/components/InfoCircleStyles";
-import {GenericStyles} from "../../resources/styles/components/GenericStyles";
+import {InfoCircleStyles} from "./InfoCircleStyles";
+import {GenericStyles} from "../../resources/GenericStyles";
 
 const InfoCircle = ({ navigation }) => {
 

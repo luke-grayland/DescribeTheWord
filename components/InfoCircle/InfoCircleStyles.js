@@ -1,6 +1,6 @@
 import {StyleSheet} from "react-native";
-import Fonts from "../../Fonts";
-import Colours from "../../Colours";
+import Fonts from "../../resources/Fonts";
+import Colours from "../../resources/Colours";
 
 export const InfoCircleStyles = StyleSheet.create({
     circle: {

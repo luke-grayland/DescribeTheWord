@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import Colours from "../../Colours";
+import Colours from "../../resources/Colours";
 
 export const HomeScreenStyles = StyleSheet.create({
     homeScreenView: {

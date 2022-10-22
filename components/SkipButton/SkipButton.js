@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, TouchableOpacity, Image} from "react-native";
-import {GenericStyles} from "../../resources/styles/components/GenericStyles";
-import {SkipButtonStyles} from "../../resources/styles/components/SkipButtonStyles";
+import {GenericStyles} from "../../resources/GenericStyles";
+import {SkipButtonStyles} from "./SkipButtonStyles";
 
 const SkipButton = () => {
 
     const click = () => {
-        console.log('Correct')
+        console.log('Skip')
     }
 
     return (

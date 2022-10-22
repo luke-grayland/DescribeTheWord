@@ -1,16 +1,34 @@
-import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from "react-native";
+import React, {useEffect, useState} from 'react';
+import {View, Text} from "react-native";
 import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title/Title.js';
 import PlayStartButton from "../../components/PlayStartButton/PlayStartButton";
 import RouteNames from "../../resources/RouteNames";
-import {HomeScreenStyles} from "../../resources/styles/screens/HomeScreenStyles";
 import Strings from "../../resources/Strings";
 import Fonts from "../../resources/Fonts";
-import {TitleStyles} from "../../resources/styles/components/TitleStyles";
-import {CategoryScreenStyles} from "../../resources/styles/screens/CategoryScreenStyles";
-import {GenericStyles} from "../../resources/styles/components/GenericStyles";
+import {TitleStyles} from "../../components/Title/TitleStyles";
+import {CategoryScreenStyles} from "./CategoryScreenStyles";
+import {GenericStyles} from "../../resources/GenericStyles";
 
 const CategoryScreen = ({navigation}) => {
+
+    let allCategories = {
+        1: 'Test Word 1',
+        2: 'Test Word 2',
+        3: 'Test Word 3'
+    } // export these to consts
+
+    const [category, setCategory] = useState('Object')
+
+    useEffect(() => {
+        let randomIndex = Math.floor(Math.random() * Object.keys(allCategories).length) + 1;
+        setCategory((allCategories)[randomIndex])
+    }, [])
+
+
+
+
+
+
     return (
         <View style={CategoryScreenStyles.categoryScreenView}>
             <View style={{...TitleStyles.titleView, ...CategoryScreenStyles.categoryScreenSection}}>
@@ -21,7 +39,7 @@ const CategoryScreen = ({navigation}) => {
                 ...CategoryScreenStyles.categoryWordResult,
                 ...GenericStyles.shadow
             }}>
-                <Text style={CategoryScreenStyles.text}>Word</Text>
+                <Text style={CategoryScreenStyles.text}>{category}</Text>
             </View>
             <View style={CategoryScreenStyles.categoryScreenSection}>
                 <PlayStartButton label={"Start"} navigation={navigation} target={RouteNames.LOADING_SCREEN} style={CategoryScreenStyles.categoryScreenSection}/>

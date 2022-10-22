@@ -1,6 +1,6 @@
 import {StyleSheet} from "react-native";
-import Colours from "../../Colours";
-import Fonts from "../../Fonts";
+import Colours from "../../resources/Colours";
+import Fonts from "../../resources/Fonts";
 
 export const CategoryScreenStyles = StyleSheet.create({
     categoryScreenView: {

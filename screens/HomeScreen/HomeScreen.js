@@ -4,9 +4,9 @@ import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title
 import PlayStartButton from "../../components/PlayStartButton/PlayStartButton";
 import Strings from "../../resources/Strings";
 import Fonts from "../../resources/Fonts";
-import {HomeScreenStyles} from "../../resources/styles/screens/HomeScreenStyles";
+import {HomeScreenStyles} from "./HomeScreenStyles";
 import RouteNames from "../../resources/RouteNames";
-import {TitleStyles} from "../../resources/styles/components/TitleStyles";
+import {TitleStyles} from "../../components/Title/TitleStyles";
 import InfoCircle from "../../components/InfoCircle/InfoCircle";
 
 const HomeScreen = ({navigation}) => {

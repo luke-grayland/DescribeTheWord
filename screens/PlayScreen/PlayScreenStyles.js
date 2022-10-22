@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import Colours from "../../Colours";
+import Colours from "../../resources/Colours";
 
 export const PlayScreenStyles = StyleSheet.create({
     playScreenView: {
@@ -11,13 +11,20 @@ export const PlayScreenStyles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         alignItems: 'center',
-
-
     },
     content: {
         flex: 2,
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         alignItems: 'center',
+    },
+    score: {
+        textAlign: 'center'
+    },
+    word: {
+        textAlign: 'center'
+    },
+    timer: {
+        textAlign: 'center'
     }
 })

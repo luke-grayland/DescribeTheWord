@@ -3,10 +3,10 @@ import {View, Text, StyleSheet, TouchableOpacity, Image} from "react-native";
 import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title/Title.js';
 import PlayStartButton from "../../components/PlayStartButton/PlayStartButton";
 import RouteNames from "../../resources/RouteNames";
-import {LoadingScreenStyles} from "../../resources/styles/screens/LoadingScreenStyles";
+import {LoadingScreenStyles} from "./LoadingScreenStyles";
 import StringLiterals from "../../resources/Strings";
 import Fonts from "../../resources/Fonts";
-import {TitleStyles} from "../../resources/styles/components/TitleStyles";
+import {TitleStyles} from "../../components/Title/TitleStyles";
 
 const LoadingScreen = ({ navigation }) => {
     return (
