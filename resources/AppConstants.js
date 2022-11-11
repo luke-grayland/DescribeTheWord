@@ -14,7 +14,13 @@ const AppConstants = {
     BORDER_RADIUS_SMALL: 5,
 
     //UI
-    VIBRATION_TIME: 50
+    VIBRATION_TIME: 50,
+
+    //Categories
+    CATEGORY_OBJECT: 'Object',
+    CATEGORY_PEOPLE: 'People',
+    CATEGORY_WORLD: 'World',
+
 
 
 }

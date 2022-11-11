@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, TouchableOpacity, Image, Vibration} from "react-native";
 import {CorrectButtonStyles} from "./CorrectButtonStyles";
 import {GenericStyles} from "../../resources/GenericStyles";
@@ -6,9 +6,11 @@ import AppConstants from "../../resources/AppConstants";
 
 const CorrectButton = ({ scoreCounter, setScoreCounter }) => {
 
+
     const click = () => {
         Vibration.vibrate(AppConstants.VIBRATION_TIME)
         setScoreCounter(scoreCounter + 1)
+        console.log(scoreCounter)
     }
 
     return (
