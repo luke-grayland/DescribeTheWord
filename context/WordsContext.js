@@ -29,6 +29,7 @@ export function WordsProvider({ children }) {
     function nextWord(category){
         setWord(allWords[category][wordIndex])
         console.log("Index: ", wordIndex, ", Word: ", word)
+        // next job is to actually iterate through words by randomising the index
         return word
     }
 
