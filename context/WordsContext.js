@@ -1,45 +1,44 @@
 import React, {createContext, useContext, useState} from 'react'
 
-const WordsContext = createContext()
-const SetWordsContext = createContext()
+const AllWordsContext = createContext()
+const SetAllWordsContext = createContext()
 const WordContext = createContext()
+const SetWordContext = createContext()
 
-export function useWords() {
-    return useContext(WordsContext)
+export function useAllWords() {
+    return useContext(AllWordsContext)
 }
 
-export function useSetWords() {
-    return useContext(SetWordsContext)
+export function useSetAllWords() {
+    return useContext(SetAllWordsContext)
 }
 
 export function useWord() {
     return useContext(WordContext)
 }
 
+export function useSetWord() {
+    return useContext(SetWordContext)
+}
+
 export function WordsProvider({ children }) {
 
     const [allWords, setAllWords] = useState()
     const [word, setWord] = useState()
-    const [wordIndex, setWordIndex] = useState(0)
 
     function loadWords(allWords) {
         setAllWords(allWords)
     }
 
-    function nextWord(category){
-        setWord(allWords[category][wordIndex])
-        console.log("Index: ", wordIndex, ", Word: ", word)
-        // next job is to actually iterate through words by randomising the index
-        return word
-    }
-
     return(
-    <WordsContext.Provider value={allWords}>
-        <SetWordsContext.Provider value={loadWords}>
-            <WordContext.Provider value={nextWord}>
-                {children}
+    <AllWordsContext.Provider value={allWords}>
+        <SetAllWordsContext.Provider value={loadWords}>
+            <WordContext.Provider value={word}>
+                <SetWordContext.Provider value={setWord}>
+                    {children}
+                </SetWordContext.Provider>
             </WordContext.Provider>
-        </SetWordsContext.Provider>
-    </WordsContext.Provider>
+        </SetAllWordsContext.Provider>
+    </AllWordsContext.Provider>
     )
 }

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Button} from "react-native";
+import {View} from "react-native";
 import PlayStartButton from "../../components/PlayStartButton/PlayStartButton";
 import RouteNames from "../../resources/RouteNames";
 import {PlayScreenStyles} from "./PlayScreenStyles"
@@ -10,7 +10,7 @@ import Title from "../../components/Title/Title";
 import Fonts from "../../resources/Fonts";
 import {useResetScore, useScore} from "../../context/ScoreContext";
 import {useCategory} from "../../context/CategoryContext";
-import {useWord} from "../../context/WordsContext";
+import {useAllWords, useSetWord, useWord} from "../../context/WordsContext";
 
 const PlayScreen = ({ navigation }) => {
 
@@ -18,10 +18,32 @@ const PlayScreen = ({ navigation }) => {
     const resetScore = useResetScore()
     const category = useCategory()
     const word = useWord()
+    const setWord = useSetWord()
+    const allWords = useAllWords()
+    let catIndexArr
+    let catLength = allWords[category].length
+    const [skipAvailable, setSkipAvailable] = useState(true)
 
+    function nextWord() {
+        let randIndex = Math.floor(Math.random() * catLength)
+        let poppedWord = allWords[category].splice(randIndex, 1)
+        setWord(poppedWord)
+    }
+
+    function createCatIndexArr(){
+        let catIndex = []
+
+        for (let i = 0; i < catLength; i++) {
+            catIndex[i] = i
+        }
+
+        return catIndex
+    }
 
     useEffect(() => {
         resetScore()
+        catIndexArr = createCatIndexArr()
+        nextWord()
     }, [])
 
     return (
@@ -47,12 +69,15 @@ const PlayScreen = ({ navigation }) => {
                     ...PlayScreenStyles.word
                 }}>
                     <Title title={category} fontSize={Fonts.H3_FONT_SIZE}/>
-                    <Title title={word(category)} fontSize={Fonts.H1_FONT_SIZE}/>
+                    <Title title={word} fontSize={Fonts.H1_FONT_SIZE}/>
                 </View>
             </View>
             <View style={PlayScreenStyles.controls}>
-                <SkipButton/>
-                <CorrectButton/>
+                <SkipButton nextWord={nextWord}
+                            setSkipAvailable={setSkipAvailable}
+                            skipAvailable={skipAvailable}
+                />
+                <CorrectButton nextWord={nextWord}/>
             </View>
             <PlayStartButton label={"Temp"} navigation={navigation} target={RouteNames.RESULTS_SCREEN}/>
         </View>

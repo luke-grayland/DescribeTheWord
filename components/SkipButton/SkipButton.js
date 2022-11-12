@@ -4,21 +4,36 @@ import {GenericStyles} from "../../resources/GenericStyles";
 import {SkipButtonStyles} from "./SkipButtonStyles";
 import AppConstants from "../../resources/AppConstants";
 
-const SkipButton = () => {
+const SkipButton = ({ nextWord, setSkipAvailable, skipAvailable }) => {
 
     const click = () => {
         Vibration.vibrate(AppConstants.VIBRATION_TIME)
-        console.log('Word Skipped')
+
+        if (skipAvailable) {
+            nextWord()
+            setSkipAvailable(false)
+        }
     }
 
     return (
         <View>
-            <TouchableOpacity
-                style={{...SkipButtonStyles.button , ...GenericStyles.shadow}}
-                onPress={click}
-            >
-                <Image source={require('../../resources/images/skip_icon.png')} style={SkipButtonStyles.icon}/>
-            </TouchableOpacity>
+            {skipAvailable &&
+                <TouchableOpacity
+                    style={{...SkipButtonStyles.activeButton, ...GenericStyles.shadow}}
+                    onPress={click}
+                >
+                    <Image source={require('../../resources/images/skip_icon.png')} style={SkipButtonStyles.icon}/>
+                </TouchableOpacity>
+            }
+            {!skipAvailable &&
+                <TouchableOpacity
+                    style={{...SkipButtonStyles.disabledButton, ...GenericStyles.shadow}}
+                    activeOpacity={1}
+                >
+                    <Image source={require('../../resources/images/skip_icon.png')} style={SkipButtonStyles.icon}/>
+                </TouchableOpacity>
+            }
+
         </View>
     )
 }

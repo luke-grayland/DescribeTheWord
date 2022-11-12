@@ -7,13 +7,13 @@ import {LoadingScreenStyles} from "./LoadingScreenStyles";
 import StringLiterals from "../../resources/AppConstants";
 import Fonts from "../../resources/Fonts";
 import {TitleStyles} from "../../components/Title/TitleStyles";
-import {useSetWords, useWords} from "../../context/WordsContext";
+import {useAllWords, useSetAllWords} from "../../context/WordsContext";
 
 const LoadingScreen = ({ navigation }) => {
 
     const [error, setError] = useState()
-    const setWords = useSetWords()
-    const words = useWords()
+    const setWords = useSetAllWords()
+    const words = useAllWords()
 
     useEffect(() => {
         fetch("http://192.168.43.109:5001/words")
@@ -23,8 +23,8 @@ const LoadingScreen = ({ navigation }) => {
                 }
                 throw response;
             })
-            .then(data => {
-                setWords(data)
+            .then(words => {
+                setWords(words)
                 // automatically navigate to next page
             })
             .catch(error => {
@@ -33,7 +33,6 @@ const LoadingScreen = ({ navigation }) => {
                 // still need to display the error to user if it occurs
             })
     }, [])
-
 
     return (
         <View style={LoadingScreenStyles.loadingScreenView}>

@@ -3,7 +3,8 @@ const Colours = {
     BACKGROUND_SECONDARY: '#A460ED',
     PLAY_BUTTON: '#9FC9F3',
     INFO_BUTTON: '#A460ED',
-    TEXT: '#9FC9F3'
+    TEXT: '#9FC9F3',
+    DISABLED_BUTTON: "#8B8B8B"
 
 }
 
