@@ -17,10 +17,10 @@ const AppConstants = {
     VIBRATION_TIME: 50,
 
     //Categories
-    CATEGORY_OBJECT: 'Object',
-    CATEGORY_PEOPLE: 'People',
-    CATEGORY_WORLD: 'World',
-
+    CATEGORY_OBJECT: 'object',
+    CATEGORY_PEOPLE: 'people',
+    CATEGORY_WORLD: 'world',
+    // do not set first caps here, it will mess up the API call (use first to upper)
 
 
 }

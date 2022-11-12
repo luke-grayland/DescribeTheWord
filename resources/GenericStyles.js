@@ -23,7 +23,8 @@ export const GenericStyles = StyleSheet.create({
         backgroundColor: Colours.TEXT,
         justifyContent: 'center',
         alignSelf: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        textAlign: 'center'
     },
 
 })

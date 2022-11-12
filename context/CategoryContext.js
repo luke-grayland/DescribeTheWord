@@ -13,7 +13,7 @@ export function useSetCategory() {
 
 export function CategoryProvider({ children }) {
 
-    const [category, setCategory] = useState("toast category")
+    const [category, setCategory] = useState("object")
 
     function updateCategory(category) {
         setCategory(category)

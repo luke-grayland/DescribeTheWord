@@ -10,8 +10,12 @@ import AppConstants from "../../resources/AppConstants";
 import {TitleStyles} from "../../components/Title/TitleStyles";
 import HomeButton from "../../components/HomeButton/HomeButton";
 import PlayAgainButton from "../../components/PlayAgainButton/PlayAgainButton";
+import {useScore} from "../../context/ScoreContext";
 
 const ResultsScreen = ({ navigation, scoreCounter }) => {
+
+    const score = useScore()
+
     return (
         <View style={ResultsScreenStyles.resultsScreenView}>
             <View style={{...ResultsScreenStyles.content, ...GenericStyles.shadow}}>
@@ -28,7 +32,7 @@ const ResultsScreen = ({ navigation, scoreCounter }) => {
                         ...ResultsScreenStyles.subContent,
                         ...ResultsScreenStyles.pointsContent
                     }}>
-                        <Title title={scoreCounter} style={TitleStyles.title} fontSize={Fonts.H1_FONT_SIZE}/>
+                        <Title title={score} style={TitleStyles.title} fontSize={Fonts.H1_FONT_SIZE}/>
                         <Title title={"Points"} style={TitleStyles.title} fontSize={Fonts.H2_FONT_SIZE}/>
                     </View>
                 </View>

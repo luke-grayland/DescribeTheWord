@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Image} from "react-native";
+import React, {useEffect, useState} from 'react';
+import {View, Image} from "react-native";
 import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title/Title.js';
 import PlayStartButton from "../../components/PlayStartButton/PlayStartButton";
 import RouteNames from "../../resources/RouteNames";
@@ -7,8 +7,34 @@ import {LoadingScreenStyles} from "./LoadingScreenStyles";
 import StringLiterals from "../../resources/AppConstants";
 import Fonts from "../../resources/Fonts";
 import {TitleStyles} from "../../components/Title/TitleStyles";
+import {useSetWords, useWords} from "../../context/WordsContext";
 
 const LoadingScreen = ({ navigation }) => {
+
+    const [error, setError] = useState()
+    const setWords = useSetWords()
+    const words = useWords()
+
+    useEffect(() => {
+        fetch("http://192.168.43.109:5001/words")
+            .then(response => {
+                if (response.ok) {
+                    return response.json()
+                }
+                throw response;
+            })
+            .then(data => {
+                setWords(data)
+                // automatically navigate to next page
+            })
+            .catch(error => {
+                console.error("Error fetching data: ", error)
+                setError(error)
+                // still need to display the error to user if it occurs
+            })
+    }, [])
+
+
     return (
         <View style={LoadingScreenStyles.loadingScreenView}>
             <View style={TitleStyles.titleView}>

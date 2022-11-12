@@ -17,16 +17,21 @@ export const PlayScreenStyles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-evenly',
         alignItems: 'center',
+        padding: '5%'
     },
     score: {
         textAlign: 'center',
         width: '25%',
     },
     word: {
-        textAlign: 'center',
+        height: '40%',
+        padding: '3%',
+
     },
     timer: {
-        textAlign: 'center',
+        width: '50%'
+    },
+    category: {
         width: '50%'
     }
 })

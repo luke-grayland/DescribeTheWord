@@ -7,39 +7,34 @@ import CategoryScreen from "./screens/CategoryScreen/CategoryScreen";
 import LoadingScreen from "./screens/LoadingScreen/LoadingScreen";
 import PlayScreen from "./screens/PlayScreen/PlayScreen";
 import ResultsScreen from "./screens/ResultsScreen/ResultsScreen";
-import React, {createContext, useState} from "react";
+import React from "react";
 import { CategoryProvider } from "./context/CategoryContext";
+import {ScoreProvider} from "./context/ScoreContext";
+import {WordsProvider} from "./context/WordsContext";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
 
-    // const [scoreCounter, setScoreCounter] = useState(0)
-
     return (
         <CategoryProvider>
-            <NavigationContainer>
-                <Stack.Navigator intialRouteName="Home" screenOptions={{headerTitleAlign: 'center'}}>
-                    <Stack.Screen name="Home" component={HomeScreen}/>
-                    <Stack.Screen name="Info" component={InfoScreen}/>
-                    <Stack.Screen name="Category"
-                                  component={CategoryScreen}/>
-                    <Stack.Screen name="Loading" component={LoadingScreen}/>
-                    <Stack.Screen name="Play"
-                                  component={PlayScreen}/>
-                    <Stack.Screen name="Results"
-                                  component={ResultsScreen}/>
-                </Stack.Navigator>
-            </NavigationContainer>
+            <ScoreProvider>
+                <WordsProvider>
+                    <NavigationContainer>
+                        <Stack.Navigator intialRouteName="Home" screenOptions={{headerTitleAlign: 'center'}}>
+                            <Stack.Screen name="Home" component={HomeScreen}/>
+                            <Stack.Screen name="Info" component={InfoScreen}/>
+                            <Stack.Screen name="Category"
+                                          component={CategoryScreen}/>
+                            <Stack.Screen name="Loading" component={LoadingScreen}/>
+                            <Stack.Screen name="Play"
+                                          component={PlayScreen}/>
+                            <Stack.Screen name="Results"
+                                          component={ResultsScreen}/>
+                        </Stack.Navigator>
+                    </NavigationContainer>
+                </WordsProvider>
+            </ScoreProvider>
         </CategoryProvider>
     )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
