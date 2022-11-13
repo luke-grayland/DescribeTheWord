@@ -28,7 +28,7 @@ const LoadingScreen = ({ navigation }) => {
                 // automatically navigate to next page
             })
             .catch(error => {
-                console.error("Error fetching data: ", error)
+                console.error("Error fetching words data: ", error)
                 setError(error)
                 // still need to display the error to user if it occurs
             })

@@ -37,8 +37,8 @@ const ResultsScreen = ({ navigation, scoreCounter }) => {
                     </View>
                 </View>
                 <View style={{...ResultsScreenStyles.subContent, ...ResultsScreenStyles.controls}}>
-                    <PlayAgainButton navigation={navigation}/>
-                    <HomeButton navigation={navigation}/>
+                    <PlayAgainButton navigation={navigation} target={RouteNames.CATEGORY_SCREEN}/>
+                    <HomeButton navigation={navigation} target={RouteNames.HOME_SCREEN}/>
                 </View>
             </View>
         </View>

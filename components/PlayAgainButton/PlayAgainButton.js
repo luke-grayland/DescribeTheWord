@@ -5,10 +5,10 @@ import RouteNames from "../../resources/RouteNames";
 import {PlayAgainButtonStyles} from "./PlayAgainButtonStyles";
 
 
-const PlayAgainButton = ({ navigation }) => {
+const PlayAgainButton = ({ navigation, target }) => {
 
     const click = () => {
-        navigation.navigate(RouteNames.CATEGORY_SCREEN)
+        navigation.navigate(target)
     }
 
     return (

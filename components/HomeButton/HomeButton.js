@@ -4,11 +4,10 @@ import {GenericStyles} from "../../resources/GenericStyles";
 import {HomeButtonStyles} from "./HomeButtonStyles";
 import RouteNames from "../../resources/RouteNames";
 
-const HomeButton = ({ navigation }) => {
+const HomeButton = ({ navigation, target}) => {
 
     const click = () => {
-        navigation.navigate(RouteNames.HOME_SCREEN)
-
+        navigation.navigate(target)
     }
 
     return (

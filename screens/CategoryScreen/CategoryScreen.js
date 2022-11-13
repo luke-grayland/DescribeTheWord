@@ -8,22 +8,22 @@ import Fonts from "../../resources/Fonts";
 import {TitleStyles} from "../../components/Title/TitleStyles";
 import {CategoryScreenStyles} from "./CategoryScreenStyles";
 import {GenericStyles} from "../../resources/GenericStyles";
-import {useCategory, useSetCategory} from "../../context/CategoryContext";
+import {useAllCategories, useCategory, useSetAllCategories, useSetCategory} from "../../context/CategoryContext";
 
 const CategoryScreen = ({ navigation }) => {
 
     const category = useCategory()
     const updateCategory = useSetCategory()
+    const allCategories = useAllCategories()
 
-    let allCategories = {
-        1: AppConstants.CATEGORY_OBJECT,
-        2: AppConstants.CATEGORY_PEOPLE,
-        3: AppConstants.CATEGORY_WORLD
-    }//fetch categories from DB once integrated
+    function setRandomCategory() {
+        let randomIndex = Math.floor(Math.random() * Object.keys(allCategories).length)
+        updateCategory((allCategories)[randomIndex])
+        console.log(category)
+    }
 
     useEffect(() => {
-        let randomIndex = Math.floor(Math.random() * Object.keys(allCategories).length) + 1
-        updateCategory((allCategories)[randomIndex])
+        setRandomCategory()
     }, [])
 
     return (
@@ -38,15 +38,14 @@ const CategoryScreen = ({ navigation }) => {
                 ...CategoryScreenStyles.categoryWordResult,
                 ...GenericStyles.shadow
             }}>
-
-                <Text style={CategoryScreenStyles.text}> {category} </Text>
-
+                <Text style={CategoryScreenStyles.text}>{category}</Text>
             </View>
             <View style={CategoryScreenStyles.categoryScreenSection}>
                 <PlayStartButton label={"Start"}
                                  navigation={navigation}
                                  target={RouteNames.LOADING_SCREEN}
-                                 style={CategoryScreenStyles.categoryScreenSection}/>
+                                 style={CategoryScreenStyles.categoryScreenSection}
+                />
             </View>
         </View>
     )
