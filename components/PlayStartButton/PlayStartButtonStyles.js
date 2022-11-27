@@ -3,11 +3,12 @@ import Fonts from "../../resources/Fonts";
 import Colours from "../../resources/Colours";
 import AppConstants from "../../resources/AppConstants";
 
+
 export const PlayStartButtonStyles = StyleSheet.create({
     button: {
         height: 60,
         width: 190,
-        backgroundColor: Colours.YELLOW,
+        backgroundColor: Colours.LIGHT_BLUE,
         justifyContent: 'space-evenly',
         alignContent: 'center',
         margin: 20,
@@ -17,17 +18,14 @@ export const PlayStartButtonStyles = StyleSheet.create({
         borderStyle: 'solid',
         borderWidth: AppConstants.BORDER_WIDTH_SMALL,
         borderColor: Colours.WHITE,
+
     },
     text: {
         fontSize: Fonts.H2_FONT_SIZE,
         textAlign: 'center',
         alignSelf: 'center',
         fontFamily: 'Raleway',
-        fontWeight: "bold"
+        fontWeight: "bold",
+        color: Colours.WHITE
     },
-    playIcon: {
-        height: 25,
-        width: 25,
-        alignSelf: 'center'
-    }
 })

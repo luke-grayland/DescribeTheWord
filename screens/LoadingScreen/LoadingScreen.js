@@ -9,6 +9,7 @@ import Fonts from "../../resources/Fonts";
 import {TitleStyles} from "../../components/Title/TitleStyles";
 import {useAllWords, useSetAllWords} from "../../context/WordsContext";
 import {useCategory} from "../../context/CategoryContext";
+import {HomeScreenStyles} from "../HomeScreen/HomeScreenStyles";
 
 const LoadingScreen = ({ navigation }) => {
 
@@ -18,7 +19,7 @@ const LoadingScreen = ({ navigation }) => {
     const category = useCategory()
 
     useEffect(() => {
-        fetch(`http://192.168.43.109:5001/words/${category}`)
+        fetch(`http://192.168.86.162:5001/words/${category}`)
             .then(response => {
                 if (response.ok) {
                     return response.json()
@@ -39,7 +40,10 @@ const LoadingScreen = ({ navigation }) => {
     return (
         <View style={LoadingScreenStyles.loadingScreenView}>
             <View style={TitleStyles.titleView}>
-                <Title title={StringLiterals.GAME_TITLE} fontSize={Fonts.H1_FONT_SIZE} style={TitleStyles.title}/>
+                {/*<Title title={StringLiterals.GAME_TITLE} fontSize={Fonts.H1_FONT_SIZE} style={TitleStyles.title}/>*/}
+                <Image style={HomeScreenStyles.logo}
+                       source={require('../../resources/images/dtw_logo.png')}>
+                </Image>
             </View>
             <View style={LoadingScreenStyles.content}>
                 <Image source={require('../../resources/images/sand_timer.png')} style={LoadingScreenStyles.timer}/>

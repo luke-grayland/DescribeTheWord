@@ -20,12 +20,15 @@ const ResultsScreen = ({ navigation, scoreCounter }) => {
         <View style={ResultsScreenStyles.resultsScreenView}>
             <View style={{...ResultsScreenStyles.content, ...GenericStyles.shadow}}>
                 <View style={{...TitleStyles.titleView, ...ResultsScreenStyles.subContent}}>
-                    <Title title={AppConstants.RESULTS_TITLE} style={TitleStyles.title} fontSize={Fonts.H2_FONT_SIZE}/>
+                    <Title title={AppConstants.RESULTS_TITLE}
+                           style={TitleStyles.title}
+                           fontSize={Fonts.H2_FONT_SIZE}/>
                 </View>
                 <View style={{
                     ...GenericStyles.contentBox,
                     ...ResultsScreenStyles.subContent,
-                    ...GenericStyles.shadow
+                    ...GenericStyles.shadow,
+                    ...ResultsScreenStyles.pointsView
                 }}>
                     <View style={{
                         ...TitleStyles.titleView,

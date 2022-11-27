@@ -11,9 +11,11 @@ const InfoScreen = () => {
     return (
         <View style={InfoScreenStyles.infoScreenView}>
             <View style={InfoScreenStyles.titleView}>
-                <Image source={require('../../resources/images/info_icon.png')}
-                       style={{...InfoCircleStyles.infoIcon, ...GenericStyles.shadow}}/>
-                <Title title={AppConstants.INFO_SCREEN_HEADER} fontSize={Fonts.H1_FONT_SIZE}/>
+                <Title
+                    title={AppConstants.INFO_SCREEN_HEADER}
+                    fontSize={Fonts.H1_FONT_SIZE}
+                    style={InfoScreenStyles.title}
+                />
             </View>
             <View style={{...InfoScreenStyles.contentView, ...GenericStyles.shadow}}>
                 <Text style={InfoScreenStyles.text}>Rule 1</Text>

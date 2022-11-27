@@ -50,8 +50,10 @@ export default function App() {
     //     return null;
     // }
 
+
+
     const [fontsLoaded] = useFonts({
-        'Inter-Black': require('./resources/fonts/Raleway-Black.ttf'),
+        'Raleway': require('./resources/fonts/Raleway-Black.ttf'),
     });
 
     const onLayoutRootView = useCallback(async () => {

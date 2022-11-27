@@ -5,14 +5,14 @@ import AppConstants from "../../resources/AppConstants";
 export const ResultsScreenStyles = StyleSheet.create({
     resultsScreenView: {
         flex: 1,
-        backgroundColor: Colours.YELLOW,
+        backgroundColor: Colours.PINK,
     },
     content: {
         marginTop: '10%',
         marginBottom: '10%',
         width: '80%',
         flex: 1,
-        backgroundColor: Colours.ORANGE,
+        backgroundColor: Colours.LIGHT_BLUE,
         alignSelf: 'center',
         borderRadius: AppConstants.BORDER_RADIUS_LARGE
     },
@@ -26,11 +26,16 @@ export const ResultsScreenStyles = StyleSheet.create({
         justifyContent: 'space-around',
         marginTop: '5%',
         marginBottom: '5%',
-
     },
     controls: {
         flex: 1.5,
         flexDirection: 'column',
         justifyContent: "space-evenly"
+    },
+    pointsView: {
+        backgroundColor: Colours.PINK,
+        borderStyle: 'solid',
+        borderWidth: AppConstants.BORDER_WIDTH_SMALL,
+        borderColor: Colours.WHITE
     }
 })

@@ -13,7 +13,7 @@ const HomeScreen = ({navigation}) => {
     const setAllCategories = useSetAllCategories()
 
     useEffect( () => {
-        fetch("http://192.168.43.109:5001/categories")
+        fetch("http://192.168.86.162:5001/categories")
             .then(response => {
                 if (response.ok) {
                     return response.json()
@@ -35,9 +35,12 @@ const HomeScreen = ({navigation}) => {
 
     return (
         <View style={HomeScreenStyles.homeScreenView}>
-            <View style={TitleStyles.titleView}>
+            <View style={{
+                ...TitleStyles.titleView,
+                ...HomeScreenStyles.logoView
+            }}>
                 <Image style={HomeScreenStyles.logo}
-                    source={require('../../resources/images/dtw_newYellow_whiteText.png')}>
+                    source={require('../../resources/images/dtw_logo.png')}>
                 </Image>
 
             </View>

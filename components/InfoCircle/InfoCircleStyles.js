@@ -5,13 +5,13 @@ import AppConstants from "../../resources/AppConstants";
 
 export const InfoCircleStyles = StyleSheet.create({
     circle: {
-        width: 70,
-        height: 70,
+        width: 65,
+        height: 65,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 100,
         margin: 10,
-        backgroundColor: Colours.YELLOW,
+        backgroundColor: Colours.PURPLE,
         borderStyle: "solid",
         borderWidth: AppConstants.BORDER_WIDTH_SMALL,
         borderColor: 'white'

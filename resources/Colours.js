@@ -6,12 +6,12 @@ const Colours = {
     TEXT: '#9FC9F3',
     DISABLED_BUTTON: "#8B8B8B",
 
-    LIGHT_BLUE: '#09C4F7',
-    ORANGE: '#F58019',
-    GREEN: '#09B009',
+    PINK: '#FF76C1',
+    LIGHT_BLUE: '#56B6E6',
     PURPLE: '#9900FF',
-    YELLOW: '#F9E956',
-    WHITE: '#FFFFFF',
+    GREEN: '#09B009',
+    ORANGE: '#FF5925',
+    WHITE: '#FFFFFF'
 
 }
 

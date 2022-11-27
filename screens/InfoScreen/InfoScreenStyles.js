@@ -5,21 +5,19 @@ import AppConstants from "../../resources/AppConstants";
 export const InfoScreenStyles = StyleSheet.create({
     infoScreenView: {
         flex: 1,
-        backgroundColor: Colours.ORANGE,
+        backgroundColor: Colours.PINK,
         alignItems: 'center',
-        justifyContent: "center"
-
+        justifyContent: "center",
     },
     titleView: {
         flex: 1,
-        flexDirection: 'column',
         alignItems: 'center',
-        paddingTop: '10%'
-
+        justifyContent: 'center',
+        marginTop: '5%',
     },
     contentView: {
         flex: 3,
-        backgroundColor: Colours.YELLOW,
+        backgroundColor: Colours.LIGHT_BLUE,
         width: '80%',
         margin: '10%',
         flexDirection: 'column',

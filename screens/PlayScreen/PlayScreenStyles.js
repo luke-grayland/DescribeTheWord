@@ -4,7 +4,7 @@ import Colours from "../../resources/Colours";
 export const PlayScreenStyles = StyleSheet.create({
     playScreenView: {
         flex: 1,
-        backgroundColor: Colours.YELLOW,
+        backgroundColor: Colours.PINK,
     },
     controls: {
         flex: 1,
@@ -25,9 +25,10 @@ export const PlayScreenStyles = StyleSheet.create({
         height: '30%'
     },
     word: {
-        height: '40%',
-        padding: '3%',
-        backgroundColor: Colours.ORANGE
+        height: '50%',
+        width: '90%',
+        padding: '5%',
+        backgroundColor: Colours.LIGHT_BLUE
     },
     timer: {
         width: '50%',

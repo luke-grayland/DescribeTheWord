@@ -9,8 +9,6 @@ export const TitleStyles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
         height: '50%',
-
-
     },
     title: {
         fontFamily: 'Raleway',
@@ -18,6 +16,5 @@ export const TitleStyles = StyleSheet.create({
         fontSize: Fonts.H1_FONT_SIZE,
         color: 'white',
         textAlign: 'center',
-
     }
 });

@@ -7,7 +7,7 @@ export const SkipButtonStyles = StyleSheet.create({
         height: 100,
         width: 100,
         borderRadius: 100,
-        backgroundColor: Colours.ORANGE,
+        backgroundColor: Colours.LIGHT_BLUE,
         justifyContent: 'center',
         borderStyle: 'solid',
         borderWidth: AppConstants.BORDER_WIDTH_SMALL,
