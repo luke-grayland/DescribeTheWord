@@ -10,9 +10,11 @@ export const TitleStyles = StyleSheet.create({
         alignSelf: 'center',
         height: '50%',
 
+
     },
     title: {
-        fontFamily: 'notoserif',
+        fontFamily: 'Raleway',
+        fontWeight: 'bold',
         fontSize: Fonts.H1_FONT_SIZE,
         color: 'white',
         textAlign: 'center',

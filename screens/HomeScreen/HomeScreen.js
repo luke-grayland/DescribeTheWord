@@ -1,9 +1,7 @@
 import React, {useEffect} from 'react';
-import {View} from "react-native";
-import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title/Title.js';
+import {Image, View} from "react-native";
 import PlayStartButton from "../../components/PlayStartButton/PlayStartButton";
 import AppConstants from "../../resources/AppConstants";
-import Fonts from "../../resources/Fonts";
 import {HomeScreenStyles} from "./HomeScreenStyles";
 import RouteNames from "../../resources/RouteNames";
 import {TitleStyles} from "../../components/Title/TitleStyles";
@@ -22,11 +20,11 @@ const HomeScreen = ({navigation}) => {
                 }
                 throw response;
             })
-            .then(data => {
+            .then(response => {
                 let categories = []
 
-                for (let i = 0; i < Object.keys(data).length; i++)
-                    categories[i] = data[i]
+                for (let i = 0; i < Object.keys(response.data).length; i++)
+                    categories[i] = response.data[i]
 
                 setAllCategories(categories)
             })
@@ -38,7 +36,10 @@ const HomeScreen = ({navigation}) => {
     return (
         <View style={HomeScreenStyles.homeScreenView}>
             <View style={TitleStyles.titleView}>
-                <Title title={AppConstants.GAME_TITLE} fontSize={Fonts.H1_FONT_SIZE}/>
+                <Image style={HomeScreenStyles.logo}
+                    source={require('../../resources/images/dtw_newYellow_whiteText.png')}>
+                </Image>
+
             </View>
             <View style={HomeScreenStyles.controlsView}>
                 <PlayStartButton label={AppConstants.PLAY_BUTTON}

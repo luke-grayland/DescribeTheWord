@@ -4,7 +4,7 @@ import Colours from "../../resources/Colours";
 export const PlayScreenStyles = StyleSheet.create({
     playScreenView: {
         flex: 1,
-        backgroundColor: Colours.BACKGROUND_PRIMARY,
+        backgroundColor: Colours.YELLOW,
     },
     controls: {
         flex: 1,
@@ -21,15 +21,17 @@ export const PlayScreenStyles = StyleSheet.create({
     },
     score: {
         textAlign: 'center',
-        width: '25%',
+        width: '50%',
+        height: '30%'
     },
     word: {
         height: '40%',
         padding: '3%',
-
+        backgroundColor: Colours.ORANGE
     },
     timer: {
-        width: '50%'
+        width: '50%',
+        height: '30%'
     },
     category: {
         width: '50%'

@@ -6,7 +6,7 @@ export const PlayAgainButtonStyles = StyleSheet.create({
         height: 100,
         width: 100,
         borderRadius: 100,
-        backgroundColor: Colours.PLAY_BUTTON,
+        backgroundColor: Colours.LIGHT_BLUE,
         justifyContent: 'center',
         alignSelf: 'center',
     },

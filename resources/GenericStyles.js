@@ -20,11 +20,10 @@ export const GenericStyles = StyleSheet.create({
         height: '20%',
         borderRadius: AppConstants.BORDER_RADIUS_LARGE,
         margin: 10,
-        backgroundColor: Colours.TEXT,
         justifyContent: 'center',
         alignSelf: 'center',
         alignItems: 'center',
-        textAlign: 'center'
+        textAlign: 'center',
     },
 
 })

@@ -21,22 +21,20 @@ const PlayScreen = ({ navigation }) => {
     const setWord = useSetWord()
     const allWords = useAllWords()
     let catIndexArr
-    let catLength = allWords[category].length
+    let catLength = allWords.length
     const [skipAvailable, setSkipAvailable] = useState(true)
 
     function nextWord() {
         let randIndex = Math.floor(Math.random() * catLength)
-        let poppedWord = allWords[category].splice(randIndex, 1)
+        let poppedWord = allWords.splice(randIndex, 1)
         setWord(poppedWord)
     }
 
     function createCatIndexArr(){
         let catIndex = []
-
         for (let i = 0; i < catLength; i++) {
             catIndex[i] = i
         }
-
         return catIndex
     }
 
@@ -51,14 +49,12 @@ const PlayScreen = ({ navigation }) => {
             <View style={PlayScreenStyles.content}>
                 <View style={{
                     ...GenericStyles.contentBox,
-                    ...GenericStyles.shadow,
                     ...PlayScreenStyles.score
                 }}>
                     <Title title={score} fontSize={Fonts.H2_FONT_SIZE}/>
                 </View>
                 <View style={{
                     ...GenericStyles.contentBox,
-                    ...GenericStyles.shadow,
                     ...PlayScreenStyles.timer
                 }}>
                     <Title title={'10s'} fontSize={Fonts.H2_FONT_SIZE}/>

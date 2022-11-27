@@ -5,22 +5,25 @@ import AppConstants from "../../resources/AppConstants";
 
 export const PlayStartButtonStyles = StyleSheet.create({
     button: {
-        height: 50,
-        width: 150,
-        backgroundColor: Colours.PLAY_BUTTON,
+        height: 60,
+        width: 190,
+        backgroundColor: Colours.YELLOW,
         justifyContent: 'space-evenly',
         alignContent: 'center',
         margin: 20,
-        borderRadius: AppConstants.BORDER_RADIUS_SMALL,
+        borderRadius: AppConstants.BORDER_RADIUS_LARGE,
         flexDirection: 'row',
-        alignSelf: 'center'
-
-
+        alignSelf: 'center',
+        borderStyle: 'solid',
+        borderWidth: AppConstants.BORDER_WIDTH_SMALL,
+        borderColor: Colours.WHITE,
     },
     text: {
         fontSize: Fonts.H2_FONT_SIZE,
         textAlign: 'center',
-        alignSelf: 'center'
+        alignSelf: 'center',
+        fontFamily: 'Raleway',
+        fontWeight: "bold"
     },
     playIcon: {
         height: 25,

@@ -6,7 +6,12 @@ const Title = ({title, fontSize}) => {
 
     return (
         <View style={TitleStyles.titleView}>
-            <Text style={{...TitleStyles.title, ...fontSize={fontSize}}}>{title}</Text>
+            <Text style={{
+                ...TitleStyles.title,
+                ...fontSize={fontSize}
+            }}>
+                {title}
+            </Text>
         </View>
     )
 }

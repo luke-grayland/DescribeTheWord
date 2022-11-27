@@ -1,20 +1,27 @@
 import {StyleSheet} from "react-native";
 import Colours from "../../resources/Colours";
+import AppConstants from "../../resources/AppConstants";
 
 export const SkipButtonStyles = StyleSheet.create({
     activeButton: {
         height: 100,
         width: 100,
         borderRadius: 100,
-        backgroundColor: Colours.TEXT,
-        justifyContent: 'center'
+        backgroundColor: Colours.ORANGE,
+        justifyContent: 'center',
+        borderStyle: 'solid',
+        borderWidth: AppConstants.BORDER_WIDTH_SMALL,
+        borderColor: Colours.WHITE
     },
     disabledButton: {
         height: 100,
         width: 100,
         borderRadius: 100,
-        backgroundColor: Colours.DISABLED_BUTTON,
-        justifyContent: 'center'
+        backgroundColor: Colours.ORANGE,
+        justifyContent: 'center',
+        borderStyle: 'solid',
+        borderWidth: AppConstants.BORDER_WIDTH_SMALL,
+        borderColor: Colours.WHITE
     },
     icon: {
         height: 80,

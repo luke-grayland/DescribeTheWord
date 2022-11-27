@@ -6,7 +6,7 @@ export const HomeButtonStyles = StyleSheet.create({
         height: 60,
         width: 60,
         borderRadius: 100,
-        backgroundColor: Colours.PLAY_BUTTON,
+        backgroundColor: Colours.LIGHT_BLUE,
         justifyContent: 'center',
         alignSelf: 'center'
 

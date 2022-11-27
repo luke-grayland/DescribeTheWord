@@ -12,6 +12,7 @@ const AppConstants = {
     //Styling
     BORDER_RADIUS_LARGE: 10,
     BORDER_RADIUS_SMALL: 5,
+    BORDER_WIDTH_SMALL: 4,
 
     //UI
     VIBRATION_TIME: 50,

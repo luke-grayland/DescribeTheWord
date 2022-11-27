@@ -4,7 +4,7 @@ import Colours from "../../resources/Colours";
 export const LoadingScreenStyles = StyleSheet.create({
     loadingScreenView: {
         flex: 1,
-        backgroundColor: Colours.BACKGROUND_PRIMARY,
+        backgroundColor: Colours.YELLOW,
     },
     content: {
         flexDirection: 'column',

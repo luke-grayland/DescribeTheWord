@@ -8,7 +8,7 @@ import Fonts from "../../resources/Fonts";
 import {TitleStyles} from "../../components/Title/TitleStyles";
 import {CategoryScreenStyles} from "./CategoryScreenStyles";
 import {GenericStyles} from "../../resources/GenericStyles";
-import {useAllCategories, useCategory, useSetAllCategories, useSetCategory} from "../../context/CategoryContext";
+import {useAllCategories, useCategory, useSetCategory} from "../../context/CategoryContext";
 
 const CategoryScreen = ({ navigation }) => {
 
@@ -17,9 +17,9 @@ const CategoryScreen = ({ navigation }) => {
     const allCategories = useAllCategories()
 
     function setRandomCategory() {
+
         let randomIndex = Math.floor(Math.random() * Object.keys(allCategories).length)
         updateCategory((allCategories)[randomIndex])
-        console.log(category)
     }
 
     useEffect(() => {
@@ -28,17 +28,20 @@ const CategoryScreen = ({ navigation }) => {
 
     return (
         <View style={CategoryScreenStyles.categoryScreenView}>
-            <View style={{...TitleStyles.titleView, ...CategoryScreenStyles.categoryScreenSection}}>
+            <View style={{
+                ...TitleStyles.titleView,
+                ...CategoryScreenStyles.categoryScreenSection
+            }}>
                 <Title title={AppConstants.CATEGORY_SCREEN_HEADER}
-                       fontSize={Fonts.H2_FONT_SIZE}
-                       style={TitleStyles.title}/>
+                       fontSize={Fonts.H2_FONT_SIZE}>
+                </Title>
             </View>
             <View style={{
                 ...CategoryScreenStyles.categoryScreenSection,
                 ...CategoryScreenStyles.categoryWordResult,
                 ...GenericStyles.shadow
             }}>
-                <Text style={CategoryScreenStyles.text}>{category}</Text>
+                <Title title={category} fontSize={Fonts.H1_FONT_SIZE}></Title>
             </View>
             <View style={CategoryScreenStyles.categoryScreenSection}>
                 <PlayStartButton label={"Start"}

@@ -1,22 +1,28 @@
 import {StyleSheet} from "react-native";
 import Fonts from "../../resources/Fonts";
 import Colours from "../../resources/Colours";
+import AppConstants from "../../resources/AppConstants";
 
 export const InfoCircleStyles = StyleSheet.create({
     circle: {
-        width: 45,
-        height: 45,
+        width: 70,
+        height: 70,
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 10,
         borderRadius: 100,
-        margin: 10
+        margin: 10,
+        backgroundColor: Colours.YELLOW,
+        borderStyle: "solid",
+        borderWidth: AppConstants.BORDER_WIDTH_SMALL,
+        borderColor: 'white'
+
     },
     text: {
-        fontSize: Fonts.H3_FONT_SIZE,
+        fontSize: Fonts.H2_FONT_SIZE,
     },
     infoIcon: {
-        height: 45,
-        width: 45
+        height: '60%',
+        width: '60%',
+        opacity: 1
     }
 })
