@@ -12,7 +12,8 @@ const AppConstants = {
     //Styling
     BORDER_RADIUS_LARGE: 10,
     BORDER_RADIUS_SMALL: 5,
-    BORDER_WIDTH_SMALL: 4,
+    BORDER_WIDTH_SMALL: 3,
+    BORDER_WIDTH_LARGE: 5,
 
     //UI
     VIBRATION_TIME: 50,
@@ -21,7 +22,9 @@ const AppConstants = {
     CATEGORY_OBJECT: 'object',
     CATEGORY_PEOPLE: 'people',
     CATEGORY_WORLD: 'world',
-    // do not set first caps here, it will mess up the API call (use first to upper)
+
+    //Settings
+    SECONDS_PER_ROUND: 10,
 
 
 }

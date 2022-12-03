@@ -11,14 +11,14 @@ import React, {useCallback} from "react";
 import { CategoryProvider } from "./context/CategoryContext";
 import {ScoreProvider} from "./context/ScoreContext";
 import {WordsProvider} from "./context/WordsContext";
-import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {RoundProvider} from "./context/RoundContext";
 
 const Stack = createNativeStackNavigator();
 // const PERSISTENCE_KEY = 'NAVIGATION_STATE_V1';
 
 export default function App() {
+
     // const [isReady, setIsReady] = React.useState(false);
     // const [initialState, setInitialState] = React.useState();
 
@@ -50,44 +50,40 @@ export default function App() {
     //     return null;
     // }
 
-
-
-    const [fontsLoaded] = useFonts({
-        'Raleway': require('./resources/fonts/Raleway-Black.ttf'),
-    });
-
-    const onLayoutRootView = useCallback(async () => {
-        if (fontsLoaded) {
-            await SplashScreen.hideAsync();
-        }
-    }, [fontsLoaded]);
-
-    if (!fontsLoaded) {
-        return null;
-    }
-
     return (
         <CategoryProvider>
             <ScoreProvider>
                 <WordsProvider>
-                    <NavigationContainer
-                        // initialState={initialState}
-                        // onStateChange={(state) =>
-                        //     AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(state))
-                        // }
-                    >
-                        <Stack.Navigator intialRouteName="Home" screenOptions={{headerTitleAlign: 'center'}}>
-                            <Stack.Screen name="Home" component={HomeScreen}/>
-                            <Stack.Screen name="Info" component={InfoScreen}/>
-                            <Stack.Screen name="Category"
-                                          component={CategoryScreen}/>
-                            <Stack.Screen name="Loading" component={LoadingScreen}/>
-                            <Stack.Screen name="Play"
-                                          component={PlayScreen}/>
-                            <Stack.Screen name="Results"
-                                          component={ResultsScreen}/>
-                        </Stack.Navigator>
-                    </NavigationContainer>
+                    <RoundProvider>
+                        <NavigationContainer
+                            // initialState={initialState}
+                            // onStateChange={(state) =>
+                            //     AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(state))
+                            // }
+                        >
+                            <Stack.Navigator intialRouteName="Home"
+                                             screenOptions={{
+                                                 headerTitleAlign: 'center',
+                                                 headerShown: false,
+
+                                             }}
+                            >
+                                <Stack.Screen name="Home" component={HomeScreen}/>
+                                <Stack.Screen name="Info" component={InfoScreen}/>
+                                <Stack.Screen name="Category"
+                                              component={CategoryScreen}
+                                />
+
+                                <Stack.Screen name="Loading" component={LoadingScreen}/>
+                                <Stack.Screen name="Play"
+                                              component={PlayScreen}
+
+                                />
+                                <Stack.Screen name="Results"
+                                              component={ResultsScreen}/>
+                            </Stack.Navigator>
+                        </NavigationContainer>
+                    </RoundProvider>
                 </WordsProvider>
             </ScoreProvider>
         </CategoryProvider>

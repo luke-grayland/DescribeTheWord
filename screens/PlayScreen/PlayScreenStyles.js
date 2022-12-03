@@ -1,5 +1,6 @@
 import {StyleSheet} from "react-native";
 import Colours from "../../resources/Colours";
+import AppConstants from "../../resources/AppConstants";
 
 export const PlayScreenStyles = StyleSheet.create({
     playScreenView: {
@@ -11,28 +12,41 @@ export const PlayScreenStyles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         alignItems: 'center',
+        margin: '10%',
+
     },
     content: {
-        flex: 2,
+        flex: 4,
         flexDirection: 'column',
         justifyContent: 'space-evenly',
         alignItems: 'center',
-        padding: '5%'
+        padding: '5%',
+        marginTop: '15%',
+
+
     },
     score: {
         textAlign: 'center',
         width: '50%',
-        height: '30%'
+        minHeight: '20%',
+
     },
     word: {
         height: '50%',
-        width: '90%',
+        width: '95%',
         padding: '5%',
-        backgroundColor: Colours.LIGHT_BLUE
+        margin: '5%',
+        marginBottom: '30%',
+        backgroundColor: Colours.LIGHT_BLUE,
+        borderStyle: 'solid',
+        borderWidth: AppConstants.BORDER_WIDTH_LARGE,
+        borderColor: Colours.WHITE,
+
     },
     timer: {
         width: '50%',
-        height: '30%'
+        minHeight: '20%',
+
     },
     category: {
         width: '50%'

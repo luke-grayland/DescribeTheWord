@@ -1,52 +1,65 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {View, Image} from "react-native";
-import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title/Title.js';
 import PlayStartButton from "../../components/PlayStartButton/PlayStartButton";
 import RouteNames from "../../resources/RouteNames";
 import {LoadingScreenStyles} from "./LoadingScreenStyles";
-import StringLiterals from "../../resources/AppConstants";
-import Fonts from "../../resources/Fonts";
 import {TitleStyles} from "../../components/Title/TitleStyles";
 import {useAllWords, useSetAllWords} from "../../context/WordsContext";
 import {useCategory} from "../../context/CategoryContext";
 import {HomeScreenStyles} from "../HomeScreen/HomeScreenStyles";
+import {useSetRound} from "../../context/RoundContext";
 
 const LoadingScreen = ({ navigation }) => {
 
     const [error, setError] = useState()
     const setWords = useSetAllWords()
-    const words = useAllWords()
     const category = useCategory()
+    const setRound = useSetRound()
+    const intervalRef = 0
+    const [timerComplete, setTimerComplete] = useState(false)
+
 
     useEffect(() => {
-        fetch(`http://192.168.86.162:5001/words/${category}`)
+        fetch(`http://192.168.43.109:5001/words/${category}`)
             .then(response => {
                 if (response.ok) {
                     return response.json()
                 }
                 throw response;
             })
-            .then(words => {
+            .then(async words => {
                 setWords(words.data)
-                // automatically navigate to next page
+
+                setInterval( () => {
+                    navigation.navigate(RouteNames.PLAY_SCREEN)
+                    setTimerComplete(true)
+                }, 3000)
+
+                // clear interval
+
+
             })
             .catch(error => {
                 console.error("Error fetching words data: ", error)
                 setError(error)
-                // still need to display the error to user if it occurs
             })
+
+        setRound(false)
+
     }, [])
+
+
 
     return (
         <View style={LoadingScreenStyles.loadingScreenView}>
             <View style={TitleStyles.titleView}>
-                {/*<Title title={StringLiterals.GAME_TITLE} fontSize={Fonts.H1_FONT_SIZE} style={TitleStyles.title}/>*/}
                 <Image style={HomeScreenStyles.logo}
                        source={require('../../resources/images/dtw_logo.png')}>
                 </Image>
             </View>
             <View style={LoadingScreenStyles.content}>
-                <Image source={require('../../resources/images/sand_timer.png')} style={LoadingScreenStyles.timer}/>
+                <Image source={require('../../resources/images/sand_timer.png')}
+                       style={LoadingScreenStyles.timer}/>
                 <PlayStartButton label={"Temp"} navigation={navigation} target={RouteNames.PLAY_SCREEN}/>
             </View>
         </View>

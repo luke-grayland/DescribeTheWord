@@ -17,7 +17,6 @@ const CategoryScreen = ({ navigation }) => {
     const allCategories = useAllCategories()
 
     function setRandomCategory() {
-
         let randomIndex = Math.floor(Math.random() * Object.keys(allCategories).length)
         updateCategory((allCategories)[randomIndex])
     }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from "react-native";
 import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title/Title.js';
 import PlayStartButton from "../../components/PlayStartButton/PlayStartButton";
@@ -11,10 +11,16 @@ import {TitleStyles} from "../../components/Title/TitleStyles";
 import HomeButton from "../../components/HomeButton/HomeButton";
 import PlayAgainButton from "../../components/PlayAgainButton/PlayAgainButton";
 import {useScore} from "../../context/ScoreContext";
+import {useRound, useSetRound} from "../../context/RoundContext";
 
-const ResultsScreen = ({ navigation, scoreCounter }) => {
+const ResultsScreen = ({ navigation }) => {
 
     const score = useScore()
+    const setRound = useSetRound()
+
+    useEffect(() => {
+        setRound(false)
+    }, [])
 
     return (
         <View style={ResultsScreenStyles.resultsScreenView}>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import {View} from "react-native";
 import PlayStartButton from "../../components/PlayStartButton/PlayStartButton";
 import RouteNames from "../../resources/RouteNames";
@@ -11,6 +11,8 @@ import Fonts from "../../resources/Fonts";
 import {useResetScore, useScore} from "../../context/ScoreContext";
 import {useCategory} from "../../context/CategoryContext";
 import {useAllWords, useSetWord, useWord} from "../../context/WordsContext";
+import Timer from "../../components/Timer/Timer";
+import {useRound} from "../../context/RoundContext";
 
 const PlayScreen = ({ navigation }) => {
 
@@ -23,6 +25,7 @@ const PlayScreen = ({ navigation }) => {
     let catIndexArr
     let catLength = allWords.length
     const [skipAvailable, setSkipAvailable] = useState(true)
+    const roundComplete = useRound()
 
     function nextWord() {
         let randIndex = Math.floor(Math.random() * catLength)
@@ -44,6 +47,9 @@ const PlayScreen = ({ navigation }) => {
         nextWord()
     }, [])
 
+    if (roundComplete)
+        navigation.navigate(RouteNames.RESULTS_SCREEN)
+
     return (
         <View style={PlayScreenStyles.playScreenView}>
             <View style={PlayScreenStyles.content}>
@@ -51,20 +57,21 @@ const PlayScreen = ({ navigation }) => {
                     ...GenericStyles.contentBox,
                     ...PlayScreenStyles.score
                 }}>
-                    <Title title={score} fontSize={Fonts.H2_FONT_SIZE}/>
+                    <Title title={`Score: ${score}`}
+                           fontSize={Fonts.H2_FONT_SIZE}/>
                 </View>
                 <View style={{
                     ...GenericStyles.contentBox,
                     ...PlayScreenStyles.timer
                 }}>
-                    <Title title={'10s'} fontSize={Fonts.H2_FONT_SIZE}/>
+                    <Timer/>
                 </View>
+                <Title title={category} fontSize={Fonts.H3_FONT_SIZE}/>
                 <View style={{
                     ...GenericStyles.contentBox,
                     ...GenericStyles.shadow,
                     ...PlayScreenStyles.word
                 }}>
-                    <Title title={category} fontSize={Fonts.H3_FONT_SIZE}/>
                     <Title title={word} fontSize={Fonts.H1_FONT_SIZE}/>
                 </View>
             </View>
@@ -75,7 +82,6 @@ const PlayScreen = ({ navigation }) => {
                 />
                 <CorrectButton nextWord={nextWord}/>
             </View>
-            <PlayStartButton label={"Temp"} navigation={navigation} target={RouteNames.RESULTS_SCREEN}/>
         </View>
     )
 }

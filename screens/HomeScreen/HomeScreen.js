@@ -13,7 +13,7 @@ const HomeScreen = ({navigation}) => {
     const setAllCategories = useSetAllCategories()
 
     useEffect( () => {
-        fetch("http://192.168.86.162:5001/categories")
+        fetch("http://192.168.43.109:5001/categories")
             .then(response => {
                 if (response.ok) {
                     return response.json()

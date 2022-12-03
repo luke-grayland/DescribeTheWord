@@ -17,7 +17,10 @@ export const CategoryScreenStyles = StyleSheet.create({
     categoryWordResult: {
         backgroundColor: Colours.LIGHT_BLUE,
         margin: 20,
-        borderRadius: AppConstants.BORDER_RADIUS_SMALL
+        borderRadius: AppConstants.BORDER_RADIUS_SMALL,
+        borderWidth: AppConstants.BORDER_WIDTH_LARGE,
+        borderColor: Colours.WHITE,
+        borderStyle: "solid"
     },
     text: {
         fontSize: Fonts.H2_FONT_SIZE,

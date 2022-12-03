@@ -8,7 +8,7 @@ export const ResultsScreenStyles = StyleSheet.create({
         backgroundColor: Colours.PINK,
     },
     content: {
-        marginTop: '10%',
+        marginTop: '20%',
         marginBottom: '10%',
         width: '80%',
         flex: 1,
@@ -35,7 +35,7 @@ export const ResultsScreenStyles = StyleSheet.create({
     pointsView: {
         backgroundColor: Colours.PINK,
         borderStyle: 'solid',
-        borderWidth: AppConstants.BORDER_WIDTH_SMALL,
+        borderWidth: AppConstants.BORDER_WIDTH_LARGE,
         borderColor: Colours.WHITE
     }
 })
