@@ -15,9 +15,6 @@ const LoadingScreen = ({ navigation }) => {
     const setWords = useSetAllWords()
     const category = useCategory()
     const setRound = useSetRound()
-    const intervalRef = 0
-    const [timerComplete, setTimerComplete] = useState(false)
-
 
     useEffect(() => {
         fetch(`http://192.168.43.109:5001/words/${category}`)
@@ -30,13 +27,9 @@ const LoadingScreen = ({ navigation }) => {
             .then(async words => {
                 setWords(words.data)
 
-                setInterval( () => {
+                setTimeout( () => {
                     navigation.navigate(RouteNames.PLAY_SCREEN)
-                    setTimerComplete(true)
                 }, 3000)
-
-                // clear interval
-
 
             })
             .catch(error => {
