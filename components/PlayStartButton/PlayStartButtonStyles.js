@@ -27,7 +27,6 @@ export const PlayStartButtonStyles = StyleSheet.create({
         fontSize: Fonts.H2_FONT_SIZE,
         textAlign: 'center',
         alignSelf: 'center',
-        // fontFamily: '',
         fontWeight: "bold",
         color: Colours.WHITE
     },

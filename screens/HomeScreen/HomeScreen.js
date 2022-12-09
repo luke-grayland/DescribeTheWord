@@ -7,13 +7,15 @@ import RouteNames from "../../resources/RouteNames";
 import {TitleStyles} from "../../components/Title/TitleStyles";
 import InfoCircle from "../../components/InfoCircle/InfoCircle";
 import {useSetAllCategories} from "../../context/CategoryContext";
+import Config from "../../config/config";
+
 
 const HomeScreen = ({navigation}) => {
 
     const setAllCategories = useSetAllCategories()
 
     useEffect( () => {
-        fetch("http://192.168.43.109:5001/categories")
+        fetch(`${Config.IP_ADDRESS}:${Config.PORT}/categories`)
             .then(response => {
                 if (response.ok) {
                     return response.json()

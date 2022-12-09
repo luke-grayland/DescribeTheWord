@@ -8,6 +8,7 @@ import {useAllWords, useSetAllWords} from "../../context/WordsContext";
 import {useCategory} from "../../context/CategoryContext";
 import {HomeScreenStyles} from "../HomeScreen/HomeScreenStyles";
 import {useSetRound} from "../../context/RoundContext";
+import Config from "../../config/config";
 
 const LoadingScreen = ({ navigation }) => {
 
@@ -17,7 +18,7 @@ const LoadingScreen = ({ navigation }) => {
     const setRound = useSetRound()
 
     useEffect(() => {
-        fetch(`http://192.168.43.109:5001/words/${category}`)
+        fetch(`${Config.IP_ADDRESS}:${Config.PORT}/words/${category}`)
             .then(response => {
                 if (response.ok) {
                     return response.json()

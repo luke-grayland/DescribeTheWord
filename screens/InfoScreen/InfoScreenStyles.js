@@ -10,28 +10,27 @@ export const InfoScreenStyles = StyleSheet.create({
         justifyContent: "center",
     },
     titleView: {
-        flex: 1,
+        flex: 0.3,
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: '15%',
     },
     contentView: {
-        flex: 3,
+        flex: 1,
         backgroundColor: Colours.LIGHT_BLUE,
         width: '80%',
         margin: '10%',
-        marginBottom: '20%',
+        marginBottom: '10%',
         flexDirection: 'column',
-        alignItems: 'center',
-        padding: '10%',
+        padding: '8%',
         borderRadius: AppConstants.BORDER_RADIUS_LARGE,
         borderStyle: "solid",
         borderColor: Colours.WHITE,
-        borderWidth: AppConstants.BORDER_WIDTH_LARGE
+        borderWidth: AppConstants.BORDER_WIDTH_LARGE,
 
     },
     text: {
-        fontSize: 20,
-        margin: 5,
+        fontSize: 15,
+        textAlign: "center"
     }
 })

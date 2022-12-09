@@ -11,7 +11,6 @@ export const TitleStyles = StyleSheet.create({
         height: '50%',
     },
     title: {
-        fontFamily: 'Raleway',
         fontWeight: 'bold',
         fontSize: Fonts.H1_FONT_SIZE,
         color: 'white',

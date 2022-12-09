@@ -25,7 +25,6 @@ export const CategoryScreenStyles = StyleSheet.create({
     text: {
         fontSize: Fonts.H2_FONT_SIZE,
         color: Colours.WHITE,
-        fontFamily: 'Raleway',
         fontWeight: 'bold'
     },
     headerText: {
