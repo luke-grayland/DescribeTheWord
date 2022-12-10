@@ -25,7 +25,8 @@ const AppConstants = {
     CATEGORY_WORLD: 'world',
 
     //Settings
-    SECONDS_PER_ROUND: 10,
+    SECONDS_PER_ROUND: 5,
+    LOADING_SCREEN_TIME: 2500
 
 
 }

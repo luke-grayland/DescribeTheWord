@@ -14,8 +14,8 @@ export const CorrectButtonStyles = StyleSheet.create({
         borderColor: Colours.WHITE
     },
     icon: {
-        height: 80,
-        width: 80,
+        height: '80%',
+        width: '80%',
         alignSelf: 'center',
     }
 })

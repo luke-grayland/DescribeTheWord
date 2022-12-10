@@ -1,5 +1,5 @@
-import React, {useEffect, useState, useContext} from 'react';
-import {View, Text} from "react-native";
+import React, {useEffect} from 'react';
+import {View} from "react-native";
 import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title/Title.js';
 import PlayStartButton from "../../components/PlayStartButton/PlayStartButton";
 import RouteNames from "../../resources/RouteNames";
@@ -9,21 +9,20 @@ import {TitleStyles} from "../../components/Title/TitleStyles";
 import {CategoryScreenStyles} from "./CategoryScreenStyles";
 import {GenericStyles} from "../../resources/GenericStyles";
 import {useAllCategories, useCategory, useSetCategory} from "../../context/CategoryContext";
+import {useIsFocused} from "@react-navigation/native";
+import {setRandomCategory} from "./CategoryHelper";
 
 const CategoryScreen = ({ navigation }) => {
 
     const category = useCategory()
     const updateCategory = useSetCategory()
     const allCategories = useAllCategories()
+    const isFocused = useIsFocused()
 
-    function setRandomCategory() {
-        let randomIndex = Math.floor(Math.random() * Object.keys(allCategories).length)
-        updateCategory((allCategories)[randomIndex])
-    }
-
-    useEffect(() => {
-        setRandomCategory()
-    }, [])
+    useEffect( () => {
+        if (isFocused)
+            setRandomCategory(allCategories, updateCategory)
+    }, [isFocused])
 
     return (
         <View style={CategoryScreenStyles.categoryScreenView}>
@@ -46,8 +45,7 @@ const CategoryScreen = ({ navigation }) => {
                 <PlayStartButton label={"Start"}
                                  navigation={navigation}
                                  target={RouteNames.LOADING_SCREEN}
-                                 style={CategoryScreenStyles.categoryScreenSection}
-                />
+                                 style={CategoryScreenStyles.categoryScreenSection}/>
             </View>
         </View>
     )

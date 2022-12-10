@@ -22,7 +22,7 @@ const SkipButton = ({ nextWord, setSkipAvailable, skipAvailable }) => {
                     style={{...SkipButtonStyles.activeButton, ...GenericStyles.shadow}}
                     onPress={click}
                 >
-                    <Image source={require('../../resources/images/skip_icon.png')} style={SkipButtonStyles.icon}/>
+                    <Image source={require('../../resources/images/skipIcon2.png')} style={SkipButtonStyles.icon}/>
                 </TouchableOpacity>
             }
             {!skipAvailable &&
@@ -30,7 +30,7 @@ const SkipButton = ({ nextWord, setSkipAvailable, skipAvailable }) => {
                     style={{...SkipButtonStyles.disabledButton, ...GenericStyles.shadow}}
                     activeOpacity={1}
                 >
-                    <Image source={require('../../resources/images/skip_icon.png')} style={SkipButtonStyles.icon}/>
+                    <Image source={require('../../resources/images/skipIcon2.png')} style={SkipButtonStyles.icon}/>
                 </TouchableOpacity>
             }
 

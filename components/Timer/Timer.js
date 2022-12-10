@@ -12,7 +12,7 @@ const Timer = () => {
     if (timer > 0)
     {
         setTimeout(() => {
-            setTimer(timer-1)
+            setTimer(timer - 1)
         }, 1000)
     }
 

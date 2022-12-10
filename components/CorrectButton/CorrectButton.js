@@ -21,7 +21,7 @@ const CorrectButton = ({ nextWord }) => {
                 style={{...CorrectButtonStyles.button , ...GenericStyles.shadow}}
                 onPress={handlePress}
             >
-                <Image source={require('../../resources/images/tick_icon_2.png')}
+                <Image source={require('../../resources/images/correctIcon2.png')}
                        style={CorrectButtonStyles.icon}/>
             </TouchableOpacity>
         </View>

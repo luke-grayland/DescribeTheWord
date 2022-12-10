@@ -17,7 +17,8 @@ const PlayAgainButton = ({ navigation, target }) => {
                 style={{...PlayAgainButtonStyles.button , ...GenericStyles.shadow}}
                 onPress={click}
             >
-                <Image source={require('../../resources/images/repeat_icon.png')} style={PlayAgainButtonStyles.icon}/>
+                <Image source={require('../../resources/images/replayIcon2.png')}
+                       style={PlayAgainButtonStyles.icon}/>
             </TouchableOpacity>
         </View>
     )

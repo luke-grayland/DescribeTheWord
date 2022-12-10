@@ -1,6 +1,5 @@
 import React, {Component, useEffect, useState} from 'react';
 import {View} from "react-native";
-import PlayStartButton from "../../components/PlayStartButton/PlayStartButton";
 import RouteNames from "../../resources/RouteNames";
 import {PlayScreenStyles} from "./PlayScreenStyles"
 import CorrectButton from "../../components/CorrectButton/CorrectButton";
@@ -15,7 +14,6 @@ import Timer from "../../components/Timer/Timer";
 import {useRound} from "../../context/RoundContext";
 
 const PlayScreen = ({ navigation }) => {
-
     const score = useScore()
     const resetScore = useResetScore()
     const category = useCategory()

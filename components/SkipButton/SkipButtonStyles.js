@@ -17,15 +17,15 @@ export const SkipButtonStyles = StyleSheet.create({
         height: 100,
         width: 100,
         borderRadius: 100,
-        backgroundColor: Colours.ORANGE,
+        backgroundColor: Colours.WHITE,
         justifyContent: 'center',
         borderStyle: 'solid',
         borderWidth: AppConstants.BORDER_WIDTH_SMALL,
         borderColor: Colours.WHITE
     },
     icon: {
-        height: 80,
-        width: 80,
+        height: '80%',
+        width: '80%',
         alignSelf: 'center'
     }
 })

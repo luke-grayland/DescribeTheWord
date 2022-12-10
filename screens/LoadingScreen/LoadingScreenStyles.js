@@ -12,7 +12,7 @@ export const LoadingScreenStyles = StyleSheet.create({
         alignItems: 'center'
     },
     timer: {
-        height: 70,
-        width: 70,
+        height: 120,
+        width: 120,
     }
 })

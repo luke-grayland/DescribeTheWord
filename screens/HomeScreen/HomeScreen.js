@@ -8,31 +8,13 @@ import {TitleStyles} from "../../components/Title/TitleStyles";
 import InfoCircle from "../../components/InfoCircle/InfoCircle";
 import {useSetAllCategories} from "../../context/CategoryContext";
 import Config from "../../config/config";
-
+import {fetchCategories} from "./HomeHelper";
 
 const HomeScreen = ({navigation}) => {
-
     const setAllCategories = useSetAllCategories()
 
     useEffect( () => {
-        fetch(`${Config.IP_ADDRESS}:${Config.PORT}/categories`)
-            .then(response => {
-                if (response.ok) {
-                    return response.json()
-                }
-                throw response;
-            })
-            .then(response => {
-                let categories = []
-
-                for (let i = 0; i < Object.keys(response.data).length; i++)
-                    categories[i] = response.data[i]
-
-                setAllCategories(categories)
-            })
-            .catch(error => {
-                console.error("Error fetching categories data: ", error)
-            })
+        fetchCategories(Config.IP_ADDRESS, Config.PORT, setAllCategories)
     }, [])
 
     return (

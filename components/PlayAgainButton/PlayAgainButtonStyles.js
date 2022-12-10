@@ -1,5 +1,6 @@
 import {StyleSheet} from "react-native";
 import Colours from "../../resources/Colours";
+import AppConstants from "../../resources/AppConstants";
 
 export const PlayAgainButtonStyles = StyleSheet.create({
     button: {
@@ -9,6 +10,9 @@ export const PlayAgainButtonStyles = StyleSheet.create({
         backgroundColor: Colours.LIGHT_BLUE,
         justifyContent: 'center',
         alignSelf: 'center',
+        borderStyle: 'solid',
+        borderColor: Colours.WHITE,
+        borderWidth: AppConstants.BORDER_WIDTH_SMALL
     },
     icon: {
         height: '70%',

@@ -9,6 +9,7 @@ import {useCategory} from "../../context/CategoryContext";
 import {HomeScreenStyles} from "../HomeScreen/HomeScreenStyles";
 import {useSetRound} from "../../context/RoundContext";
 import Config from "../../config/config";
+import AppConstants from "../../resources/AppConstants";
 
 const LoadingScreen = ({ navigation }) => {
 
@@ -30,7 +31,7 @@ const LoadingScreen = ({ navigation }) => {
 
                 setTimeout( () => {
                     navigation.navigate(RouteNames.PLAY_SCREEN)
-                }, 3000)
+                }, AppConstants.LOADING_SCREEN_TIME)
 
             })
             .catch(error => {
@@ -52,7 +53,7 @@ const LoadingScreen = ({ navigation }) => {
                 </Image>
             </View>
             <View style={LoadingScreenStyles.content}>
-                <Image source={require('../../resources/images/sand_timer.png')}
+                <Image source={require('../../resources/images/sandtimer3.png')}
                        style={LoadingScreenStyles.timer}/>
             </View>
         </View>

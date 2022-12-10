@@ -1,5 +1,5 @@
 const Config = {
-    IP_ADDRESS: 'http://192.168.43.109',
+    IP_ADDRESS: 'http://192.168.86.175',
     PORT: '5001'
 }
 

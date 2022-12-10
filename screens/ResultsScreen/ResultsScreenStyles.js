@@ -14,7 +14,10 @@ export const ResultsScreenStyles = StyleSheet.create({
         flex: 1,
         backgroundColor: Colours.LIGHT_BLUE,
         alignSelf: 'center',
-        borderRadius: AppConstants.BORDER_RADIUS_LARGE
+        borderRadius: AppConstants.BORDER_RADIUS_LARGE,
+        borderStyle: 'solid',
+        borderColor: Colours.WHITE,
+        borderWidth: AppConstants.BORDER_WIDTH_LARGE
     },
     subContent: {
         flex: 1,
