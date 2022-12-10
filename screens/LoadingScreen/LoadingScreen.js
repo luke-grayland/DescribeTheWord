@@ -54,7 +54,6 @@ const LoadingScreen = ({ navigation }) => {
             <View style={LoadingScreenStyles.content}>
                 <Image source={require('../../resources/images/sand_timer.png')}
                        style={LoadingScreenStyles.timer}/>
-                <PlayStartButton label={"Temp"} navigation={navigation} target={RouteNames.PLAY_SCREEN}/>
             </View>
         </View>
     )

@@ -1,30 +1,30 @@
 import React from 'react';
 import {View, TouchableOpacity, Image} from "react-native";
-import {InfoCircleStyles} from "./InfoCircleStyles";
 import {GenericStyles} from "../../resources/GenericStyles";
 import RouteNames from "../../resources/RouteNames";
+import {ExitButtonStyles} from "./ExitButtonStyles";
 
-const InfoCircle = ({ navigation }) => {
+const ExitButton = ({ navigation }) => {
 
     const click = () => {
-        navigation.navigate(RouteNames.INFO_SCREEN)
-}
+        navigation.navigate(RouteNames.HOME_SCREEN)
+    }
 
     return (
         <View>
             <TouchableOpacity
                 style={{
-                    ...InfoCircleStyles.circle,
+                    ...ExitButtonStyles.circle,
                     ...GenericStyles.shadow
-                    }}
+                }}
                 onPress={click}>
-                <Image source={require("../../resources/images/infoIconWhite.png")}
-                       style={InfoCircleStyles.infoIcon}
+                <Image source={require("../../resources/images/exit_icon.png")}
+                       style={ExitButtonStyles.exitIcon}
                 ></Image>
             </TouchableOpacity>
         </View>
     )
 }
 
-export default InfoCircle
+export default ExitButton
 

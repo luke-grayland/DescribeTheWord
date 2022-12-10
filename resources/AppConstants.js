@@ -12,6 +12,7 @@ const AppConstants = {
     //Styling
     BORDER_RADIUS_LARGE: 10,
     BORDER_RADIUS_SMALL: 5,
+    BORDER_WIDTH_EXTRA_SMALL: 2,
     BORDER_WIDTH_SMALL: 3,
     BORDER_WIDTH_LARGE: 5,
 

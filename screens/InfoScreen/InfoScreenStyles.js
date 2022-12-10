@@ -4,23 +4,24 @@ import AppConstants from "../../resources/AppConstants";
 
 export const InfoScreenStyles = StyleSheet.create({
     infoScreenView: {
-        flex: 1,
         backgroundColor: Colours.PINK,
         alignItems: 'center',
         justifyContent: "center",
+        height: '100%'
     },
     titleView: {
-        flex: 0.3,
+        flex: 0.5,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: '15%',
+
     },
     contentView: {
-        flex: 1,
+        flex: 4,
         backgroundColor: Colours.LIGHT_BLUE,
         width: '80%',
-        margin: '10%',
+        margin: '2%',
         marginBottom: '10%',
+        paddingBottom: '50%',
         flexDirection: 'column',
         padding: '8%',
         borderRadius: AppConstants.BORDER_RADIUS_LARGE,
@@ -31,6 +32,14 @@ export const InfoScreenStyles = StyleSheet.create({
     },
     text: {
         fontSize: 15,
-        textAlign: "center"
-    }
+        textAlign: "center",
+        color: Colours.WHITE
+    },
+    exitButtonView: {
+        flex: 0.2,
+        width: '80%',
+        justifyContent: "flex-end",
+        alignItems: 'flex-start',
+        marginTop: '10%',
+    },
 })
