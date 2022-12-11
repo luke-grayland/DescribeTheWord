@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View} from "react-native";
 import RouteNames from "../../resources/RouteNames";
 import {PlayScreenStyles} from "./PlayScreenStyles"
@@ -12,6 +12,7 @@ import {useCategory} from "../../context/CategoryContext";
 import {useAllWords, useSetWord, useWord} from "../../context/WordsContext";
 import Timer from "../../components/Timer/Timer";
 import {useRound} from "../../context/RoundContext";
+import {nextWord} from "./PlayHelper";
 
 const PlayScreen = ({ navigation }) => {
     const score = useScore()
@@ -20,29 +21,13 @@ const PlayScreen = ({ navigation }) => {
     const word = useWord()
     const setWord = useSetWord()
     const allWords = useAllWords()
-    let catIndexArr
     let catLength = allWords.length
     const [skipAvailable, setSkipAvailable] = useState(true)
     const roundComplete = useRound()
 
-    function nextWord() {
-        let randIndex = Math.floor(Math.random() * catLength)
-        let poppedWord = allWords.splice(randIndex, 1)
-        setWord(poppedWord)
-    }
-
-    function createCatIndexArr(){
-        let catIndex = []
-        for (let i = 0; i < catLength; i++) {
-            catIndex[i] = i
-        }
-        return catIndex
-    }
-
     useEffect(() => {
         resetScore()
-        catIndexArr = createCatIndexArr()
-        nextWord()
+        nextWord(catLength, allWords, setWord)
     }, [])
 
     if (roundComplete)
@@ -75,10 +60,17 @@ const PlayScreen = ({ navigation }) => {
             </View>
             <View style={PlayScreenStyles.controls}>
                 <SkipButton nextWord={nextWord}
+                            catLength={catLength}
+                            allWords={allWords}
+                            setWord={setWord}
                             setSkipAvailable={setSkipAvailable}
                             skipAvailable={skipAvailable}
                 />
-                <CorrectButton nextWord={nextWord}/>
+                <CorrectButton nextWord={nextWord}
+                               catLength={catLength}
+                               allWords={allWords}
+                               setWord={setWord}
+                />
             </View>
         </View>
     )

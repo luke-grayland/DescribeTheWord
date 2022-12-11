@@ -3,7 +3,6 @@ import {View, Text, StyleSheet} from "react-native";
 import {TitleStyles} from "./TitleStyles";
 
 const Title = ({title, fontSize}) => {
-
     return (
         <View style={TitleStyles.titleView}>
             <Text style={{
@@ -17,4 +16,3 @@ const Title = ({title, fontSize}) => {
 }
 
 export default Title
-

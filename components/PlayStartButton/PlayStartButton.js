@@ -4,7 +4,6 @@ import {PlayStartButtonStyles} from "./PlayStartButtonStyles";
 import {GenericStyles} from "../../resources/GenericStyles";
 
 const PlayStartButton = ({ navigation, label, target }) => {
-
     const handleStartButton = () => {
         navigation.navigate(target)
     }
@@ -21,4 +20,3 @@ const PlayStartButton = ({ navigation, label, target }) => {
 }
 
 export default PlayStartButton
-

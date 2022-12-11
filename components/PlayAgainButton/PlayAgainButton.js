@@ -1,12 +1,9 @@
 import React from 'react';
 import {View, TouchableOpacity, Image} from "react-native";
 import {GenericStyles} from "../../resources/GenericStyles";
-import RouteNames from "../../resources/RouteNames";
 import {PlayAgainButtonStyles} from "./PlayAgainButtonStyles";
 
-
 const PlayAgainButton = ({ navigation, target }) => {
-
     const click = () => {
         navigation.navigate(target)
     }
@@ -25,4 +22,3 @@ const PlayAgainButton = ({ navigation, target }) => {
 }
 
 export default PlayAgainButton
-

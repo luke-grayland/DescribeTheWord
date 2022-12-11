@@ -5,7 +5,6 @@ import RouteNames from "../../resources/RouteNames";
 import {ExitButtonStyles} from "./ExitButtonStyles";
 
 const ExitButton = ({ navigation }) => {
-
     const click = () => {
         navigation.navigate(RouteNames.HOME_SCREEN)
     }
@@ -27,4 +26,3 @@ const ExitButton = ({ navigation }) => {
 }
 
 export default ExitButton
-

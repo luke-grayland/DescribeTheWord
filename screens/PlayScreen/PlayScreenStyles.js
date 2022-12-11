@@ -13,7 +13,6 @@ export const PlayScreenStyles = StyleSheet.create({
         justifyContent: 'space-evenly',
         alignItems: 'center',
         margin: '10%',
-
     },
     content: {
         flex: 4,
@@ -22,8 +21,6 @@ export const PlayScreenStyles = StyleSheet.create({
         alignItems: 'center',
         padding: '5%',
         marginTop: '15%',
-
-
     },
     score: {
         textAlign: 'center',
@@ -41,12 +38,10 @@ export const PlayScreenStyles = StyleSheet.create({
         borderStyle: 'solid',
         borderWidth: AppConstants.BORDER_WIDTH_LARGE,
         borderColor: Colours.WHITE,
-
     },
     timer: {
         width: '50%',
         minHeight: '20%',
-
     },
     category: {
         width: '50%'

@@ -1,49 +1,42 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {View, Image} from "react-native";
-import PlayStartButton from "../../components/PlayStartButton/PlayStartButton";
-import RouteNames from "../../resources/RouteNames";
+import React, {useEffect} from 'react';
+import {View, Image, Animated, Easing} from "react-native";
 import {LoadingScreenStyles} from "./LoadingScreenStyles";
 import {TitleStyles} from "../../components/Title/TitleStyles";
-import {useAllWords, useSetAllWords} from "../../context/WordsContext";
+import {useSetAllWords} from "../../context/WordsContext";
 import {useCategory} from "../../context/CategoryContext";
 import {HomeScreenStyles} from "../HomeScreen/HomeScreenStyles";
 import {useSetRound} from "../../context/RoundContext";
 import Config from "../../config/config";
-import AppConstants from "../../resources/AppConstants";
+import {createSpin, getWordsByCategory, startAnimationLoop} from "./LoadingHelper";
 
 const LoadingScreen = ({ navigation }) => {
-
-    const [error, setError] = useState()
     const setWords = useSetAllWords()
     const category = useCategory()
     const setRound = useSetRound()
+    const spinValue = new Animated.Value(0);
+    const spin = createSpin(spinValue)
+
+    Animated.loop(
+        Animated.timing(
+            spinValue,
+            {
+                toValue: 1,
+                duration: 3000,
+                easing: Easing.linear,
+                useNativeDriver: true
+            }
+        )
+    ).start();
 
     useEffect(() => {
-        fetch(`${Config.IP_ADDRESS}:${Config.PORT}/words/${category}`)
-            .then(response => {
-                if (response.ok) {
-                    return response.json()
-                }
-                throw response;
-            })
-            .then(async words => {
-                setWords(words.data)
-
-                setTimeout( () => {
-                    navigation.navigate(RouteNames.PLAY_SCREEN)
-                }, AppConstants.LOADING_SCREEN_TIME)
-
-            })
-            .catch(error => {
-                console.error("Error fetching words data: ", error)
-                setError(error)
-            })
-
+        getWordsByCategory(
+            Config.IP_ADDRESS,
+            Config.PORT,
+            category,
+            navigation,
+            setWords)
         setRound(false)
-
     }, [])
-
-
 
     return (
         <View style={LoadingScreenStyles.loadingScreenView}>
@@ -53,11 +46,11 @@ const LoadingScreen = ({ navigation }) => {
                 </Image>
             </View>
             <View style={LoadingScreenStyles.content}>
-                <Image source={require('../../resources/images/sandtimer3.png')}
-                       style={LoadingScreenStyles.timer}/>
+                <Animated.Image
+                    style={{transform: [{rotate: spin}], height: 120, width: 120}}
+                    source={require('../../resources/images/sandtimer3.png')} />
             </View>
         </View>
     )
 }
 export default LoadingScreen
-

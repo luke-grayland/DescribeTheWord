@@ -5,7 +5,6 @@ import {GenericStyles} from "../../resources/GenericStyles";
 import RouteNames from "../../resources/RouteNames";
 
 const InfoCircle = ({ navigation }) => {
-
     const click = () => {
         navigation.navigate(RouteNames.INFO_SCREEN)
 }
@@ -27,4 +26,3 @@ const InfoCircle = ({ navigation }) => {
 }
 
 export default InfoCircle
-

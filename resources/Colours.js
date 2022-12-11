@@ -12,7 +12,6 @@ const Colours = {
     GREEN: '#09B009',
     ORANGE: '#FF5925',
     WHITE: '#FFFFFF'
-
 }
 
 export default Colours

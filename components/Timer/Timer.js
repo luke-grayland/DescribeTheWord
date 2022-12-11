@@ -5,7 +5,6 @@ import AppConstants from "../../resources/AppConstants";
 import {useSetRound} from "../../context/RoundContext";
 
 const Timer = () => {
-
     const [timer, setTimer] = useState(AppConstants.SECONDS_PER_ROUND)
     const setRoundComplete = useSetRound()
 

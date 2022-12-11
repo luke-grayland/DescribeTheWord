@@ -27,8 +27,6 @@ const AppConstants = {
     //Settings
     SECONDS_PER_ROUND: 5,
     LOADING_SCREEN_TIME: 2500
-
-
 }
 
 export default AppConstants

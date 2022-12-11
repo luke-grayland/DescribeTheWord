@@ -1,5 +1,4 @@
 import {StyleSheet} from "react-native";
-import Colours from "./Colours";
 import AppConstants from "./AppConstants";
 
 export const GenericStyles = StyleSheet.create({
@@ -24,5 +23,4 @@ export const GenericStyles = StyleSheet.create({
         alignItems: 'center',
         textAlign: 'center',
     },
-
 })
