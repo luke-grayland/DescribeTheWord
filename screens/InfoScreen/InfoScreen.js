@@ -23,9 +23,11 @@ const InfoScreen = ({ navigation }) => {
             </View>
             <ScrollView style={{
                 ...InfoScreenStyles.contentView,
-                ...GenericStyles.shadow}}>
+                ...GenericStyles.shadow}}
+                        showsVerticalScrollIndicator={false}
+            >
                 <Text style={InfoScreenStyles.text}>
-                    {`Each round you have 60 seconds to describe as many words as possible, without saying the word itself. You can play solo or split into teams.\n\nOne skip is allowed per round. When the timer runs out, your turn is finished. Take note of your score, and pass the phone to the next player.\n\nIt is suggested that after each player has had 5 rounds, the player/team with the highest total score wins.\n\nYou can gesticulate, mime, or act.\n\nYou cannot say "sounds like" or "rhymes with", say part of the word, or say how many letters it has.\n\n`}
+                    {`Each round you have 60 seconds to describe as many words as possible, without saying the word itself. You can play solo or split into teams.\n\nThree skips are allowed per round. When the timer runs out, your turn is finished. Take note of your score, and pass the phone to the next player.\n\nIt is suggested that after each player has had 5 rounds, the player/team with the highest total score wins.\n\nYou can gesticulate, mime, or act.\n\nYou cannot say "sounds like" or "rhymes with", say part of the word, or say how many letters it has.\n\n`}
                 </Text>
             </ScrollView>
         </SafeAreaView>

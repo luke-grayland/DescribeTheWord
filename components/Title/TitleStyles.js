@@ -8,7 +8,7 @@ export const TitleStyles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         alignSelf: 'center',
-        height: '50%',
+        minHeight: '30%'
     },
     title: {
         fontWeight: 'bold',

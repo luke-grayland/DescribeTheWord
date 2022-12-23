@@ -13,6 +13,7 @@ import {useAllWords, useSetWord, useWord} from "../../context/WordsContext";
 import Timer from "../../components/Timer/Timer";
 import {useRound} from "../../context/RoundContext";
 import {nextWord} from "./PlayHelper";
+import AppConstants from "../../resources/AppConstants";
 
 const PlayScreen = ({ navigation }) => {
     const score = useScore()
@@ -23,10 +24,13 @@ const PlayScreen = ({ navigation }) => {
     const allWords = useAllWords()
     let catLength = allWords.length
     const [skipAvailable, setSkipAvailable] = useState(true)
+    const [skipsLeft, setSkipsLeft] = useState()
+
     const roundComplete = useRound()
 
     useEffect(() => {
         resetScore()
+        setSkipsLeft(AppConstants.SKIPS_PER_ROUND)
         nextWord(catLength, allWords, setWord)
     }, [])
 
@@ -36,18 +40,19 @@ const PlayScreen = ({ navigation }) => {
     return (
         <View style={PlayScreenStyles.playScreenView}>
             <View style={PlayScreenStyles.content}>
-                <View style={{
-                    ...GenericStyles.contentBox,
-                    ...PlayScreenStyles.score
-                }}>
-                    <Title title={`Score: ${score}`}
-                           fontSize={Fonts.H2_FONT_SIZE}/>
-                </View>
-                <View style={{
-                    ...GenericStyles.contentBox,
-                    ...PlayScreenStyles.timer
-                }}>
-                    <Timer/>
+                <View style={PlayScreenStyles.topOfContent}>
+                    <View style={{
+                        ...GenericStyles.contentBox,
+                        ...PlayScreenStyles.score
+                    }}>
+                        <Title title={`Score: ${score}`}
+                               fontSize={Fonts.H2_FONT_SIZE}/>
+                    </View>
+                    <View style={{
+                        ...GenericStyles.contentBox
+                    }}>
+                        <Timer/>
+                    </View>
                 </View>
                 <Title title={category} fontSize={Fonts.H3_FONT_SIZE}/>
                 <View style={{
@@ -57,6 +62,7 @@ const PlayScreen = ({ navigation }) => {
                 }}>
                     <Title title={word} fontSize={Fonts.H1_FONT_SIZE}/>
                 </View>
+                <Title title={`${AppConstants.SKIPS_LEFT}: ${skipsLeft}`} fontSize={Fonts.H3_FONT_SIZE}/>
             </View>
             <View style={PlayScreenStyles.controls}>
                 <SkipButton nextWord={nextWord}
@@ -65,6 +71,8 @@ const PlayScreen = ({ navigation }) => {
                             setWord={setWord}
                             setSkipAvailable={setSkipAvailable}
                             skipAvailable={skipAvailable}
+                            skipsLeft={skipsLeft}
+                            setSkipsLeft={setSkipsLeft}
                 />
                 <CorrectButton nextWord={nextWord}
                                catLength={catLength}

@@ -6,21 +6,23 @@ import AppConstants from "../../resources/AppConstants";
 export const CategoryScreenStyles = StyleSheet.create({
     categoryScreenView: {
         flex: 1,
-        backgroundColor: Colours.PINK
+        backgroundColor: Colours.PINK,
     },
-    categoryScreenSection: {
-        flex: 1,
-        flexDirection: 'row',
+    categoryScreenTop: {
+        flexDirection: 'column',
+        marginTop: '10%',
+    },
+    categoryScreenBottom : {
+        height: '33%',
         justifyContent: 'center',
-        alignItems: 'center'
     },
-    categoryWordResult: {
+    categoryScreenMiddle: {
         backgroundColor: Colours.LIGHT_BLUE,
         margin: 20,
         borderRadius: AppConstants.BORDER_RADIUS_SMALL,
         borderWidth: AppConstants.BORDER_WIDTH_LARGE,
         borderColor: Colours.WHITE,
-        borderStyle: "solid"
+        borderStyle: "solid",
     },
     text: {
         fontSize: Fonts.H2_FONT_SIZE,

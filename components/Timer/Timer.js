@@ -15,7 +15,7 @@ const Timer = () => {
         }, 1000)
     }
 
-    if (timer === 0)
+    if (timer < 1)
         setRoundComplete(true)
 
     return(

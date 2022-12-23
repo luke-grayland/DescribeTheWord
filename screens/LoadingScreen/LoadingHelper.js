@@ -1,7 +1,7 @@
 import Config from "../../config/config";
 import RouteNames from "../../resources/RouteNames";
 import AppConstants from "../../resources/AppConstants";
-import {Animated, Easing} from "react-native";
+import {Animated} from "react-native";
 
 export const getWordsByCategory = (
     ipAddress,
@@ -26,9 +26,6 @@ export const getWordsByCategory = (
         })
 }
 
-export const createSpin = (spinValue) => {
-    return spinValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: ['0deg', '360deg']
-    })
+export const toggleVisible = (visible, setVisible) => {
+    setVisible(!visible)
 }

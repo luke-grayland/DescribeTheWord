@@ -9,13 +9,18 @@ const SkipButton = ({nextWord,
                         skipAvailable,
                         allWords,
                         setWord,
-                        catLength }) => {
+                        catLength,
+                        skipsLeft,
+                        setSkipsLeft
+                    }) => {
     const click = () => {
-        Vibration.vibrate(AppConstants.VIBRATION_TIME)
-
         if (skipAvailable) {
+            Vibration.vibrate(AppConstants.VIBRATION_TIME)
             nextWord(catLength, allWords, setWord)
-            setSkipAvailable(false)
+            setSkipsLeft(skipsLeft - 1)
+
+            if (skipsLeft == 1)
+                setSkipAvailable(false)
         }
     }
 

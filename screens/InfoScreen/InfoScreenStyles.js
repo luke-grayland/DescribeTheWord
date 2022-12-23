@@ -13,7 +13,6 @@ export const InfoScreenStyles = StyleSheet.create({
         flex: 0.5,
         alignItems: 'center',
         justifyContent: 'center',
-
     },
     contentView: {
         flex: 4,
@@ -28,7 +27,6 @@ export const InfoScreenStyles = StyleSheet.create({
         borderStyle: "solid",
         borderColor: Colours.WHITE,
         borderWidth: AppConstants.BORDER_WIDTH_LARGE,
-
     },
     text: {
         fontSize: 15,
@@ -40,6 +38,6 @@ export const InfoScreenStyles = StyleSheet.create({
         width: '80%',
         justifyContent: "flex-end",
         alignItems: 'flex-start',
-        marginTop: '10%',
+        marginTop: '15%',
     },
 })

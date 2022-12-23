@@ -1,54 +1,63 @@
-import React, {useEffect} from 'react';
-import {View, Image, Animated, Easing} from "react-native";
+import React, {useEffect, useState} from 'react';
+import {View, Image, Animated} from "react-native";
 import {LoadingScreenStyles} from "./LoadingScreenStyles";
-import {TitleStyles} from "../../components/Title/TitleStyles";
 import {useSetAllWords} from "../../context/WordsContext";
 import {useCategory} from "../../context/CategoryContext";
 import {HomeScreenStyles} from "../HomeScreen/HomeScreenStyles";
 import {useSetRound} from "../../context/RoundContext";
 import Config from "../../config/config";
-import {createSpin, getWordsByCategory, startAnimationLoop} from "./LoadingHelper";
+import {getWordsByCategory, toggleVisible} from "./LoadingHelper";
+import AppConstants from "../../resources/AppConstants";
+import FadeInOut from "react-native-fade-in-out";
+import RouteNames from "../../resources/RouteNames";
 
 const LoadingScreen = ({ navigation }) => {
     const setWords = useSetAllWords()
     const category = useCategory()
     const setRound = useSetRound()
-    const spinValue = new Animated.Value(0);
-    const spin = createSpin(spinValue)
-
-    Animated.loop(
-        Animated.timing(
-            spinValue,
-            {
-                toValue: 1,
-                duration: 3000,
-                easing: Easing.linear,
-                useNativeDriver: true
-            }
-        )
-    ).start();
+    const [visible, setVisible] = useState(false)
+    const [fadeOut, setFadeOut] = useState(true)
 
     useEffect(() => {
-        getWordsByCategory(
-            Config.IP_ADDRESS,
-            Config.PORT,
-            category,
-            navigation,
-            setWords)
+        toggleVisible(visible, setVisible)
+    }, [fadeOut])
+
+    // useEffect(() => {
+    //         navigation.addListener('beforeRemove', (e) => {
+    //             e.preventDefault()
+    //         })
+    // }, [navigation])
+
+    useEffect(() => {
+        toggleVisible(visible, setVisible)
+        getWordsByCategory(Config.IP_ADDRESS, Config.PORT, category, navigation, setWords)
         setRound(false)
+
+        setTimeout(() => {
+            setFadeOut(!fadeOut)
+        }, (AppConstants.LOADING_SCREEN_TIME * 0.925))
+
     }, [])
 
     return (
         <View style={LoadingScreenStyles.loadingScreenView}>
-            <View style={TitleStyles.titleView}>
+            <View style={LoadingScreenStyles.titleView}>
                 <Image style={HomeScreenStyles.logo}
                        source={require('../../resources/images/dtw_logo.png')}>
                 </Image>
             </View>
             <View style={LoadingScreenStyles.content}>
-                <Animated.Image
-                    style={{transform: [{rotate: spin}], height: 120, width: 120}}
-                    source={require('../../resources/images/sandtimer3.png')} />
+                <FadeInOut visible={visible}
+                           duration={500}
+                           scale={true}
+                           rotate={true}>
+                    <Image
+                        style={{
+                            height: 120,
+                            width: 120,
+                        }}
+                        source={require('../../resources/images/sandtimer3.png')} />
+                </FadeInOut>
             </View>
         </View>
     )

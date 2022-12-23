@@ -2,11 +2,8 @@ import {StyleSheet} from "react-native";
 import Fonts from "../../resources/Fonts";
 import Colours from "../../resources/Colours";
 import AppConstants from "../../resources/AppConstants";
-import {useFonts} from "expo-font";
 
 export const PlayStartButtonStyles = StyleSheet.create({
-
-
 
     button: {
         height: 60,

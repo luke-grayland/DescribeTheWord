@@ -9,12 +9,10 @@ export const ExitButtonStyles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 100,
-        margin: 10,
         backgroundColor: Colours.WHITE,
         borderStyle: "solid",
         borderWidth: AppConstants.BORDER_WIDTH_SMALL,
         borderColor: 'white',
-        opacity: 0.8
 
     },
     exitIcon: {

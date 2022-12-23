@@ -19,26 +19,24 @@ export const ResultsScreenStyles = StyleSheet.create({
         borderColor: Colours.WHITE,
         borderWidth: AppConstants.BORDER_WIDTH_LARGE
     },
-    subContent: {
-        flex: 1,
-        justifyContent: 'center',
-        alignContent: 'center',
-    },
     pointsContent: {
         flexDirection: 'column',
-        justifyContent: 'space-around',
-        marginTop: '5%',
-        marginBottom: '5%',
+        justifyContent: 'space-evenly',
+        paddingTop: '5%',
+        paddingBottom: '5%',
     },
     controls: {
-        flex: 1.5,
+        flex: 2,
         flexDirection: 'column',
-        justifyContent: "space-evenly"
+        justifyContent: "space-evenly",
     },
     pointsView: {
         backgroundColor: Colours.PINK,
         borderStyle: 'solid',
         borderWidth: AppConstants.BORDER_WIDTH_LARGE,
-        borderColor: Colours.WHITE
+        borderColor: Colours.WHITE,
+        flex: 1,
+        minHeight: '5%'
+
     }
 })

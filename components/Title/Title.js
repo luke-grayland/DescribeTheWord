@@ -8,7 +8,10 @@ const Title = ({title, fontSize}) => {
             <Text style={{
                 ...TitleStyles.title,
                 ...fontSize={fontSize}
-            }}>
+            }}
+                  adjustsFontSizeToFit={true}
+                  numberOfLines={1}
+            >
                 {title}
             </Text>
         </View>

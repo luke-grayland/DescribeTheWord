@@ -30,13 +30,11 @@ const ResultsScreen = ({ navigation }) => {
                 </View>
                 <View style={{
                     ...GenericStyles.contentBox,
-                    ...ResultsScreenStyles.subContent,
                     ...GenericStyles.shadow,
                     ...ResultsScreenStyles.pointsView
                 }}>
                     <View style={{
                         ...TitleStyles.titleView,
-                        ...ResultsScreenStyles.subContent,
                         ...ResultsScreenStyles.pointsContent
                     }}>
                         <Title title={score} style={TitleStyles.title} fontSize={Fonts.H1_FONT_SIZE}/>

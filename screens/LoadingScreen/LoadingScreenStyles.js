@@ -9,7 +9,17 @@ export const LoadingScreenStyles = StyleSheet.create({
     content: {
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        height: '50%',
+        flex: 1,
+        marginBottom: '30%'
+    },
+    titleView: {
+        height: '50%',
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: '15%'
     },
     timer: {
         height: 120,

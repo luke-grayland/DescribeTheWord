@@ -8,6 +8,7 @@ const AppConstants = {
     INFO_SCREEN_HEADER: 'How to Play',
     CATEGORY_SCREEN_HEADER: 'Your Category Is:',
     RESULTS_TITLE: "Time's Up!",
+    SKIPS_LEFT: "Skips Left",
 
     //Styling
     BORDER_RADIUS_LARGE: 10,
@@ -25,8 +26,9 @@ const AppConstants = {
     CATEGORY_WORLD: 'world',
 
     //Settings
-    SECONDS_PER_ROUND: 5,
-    LOADING_SCREEN_TIME: 2500
+    SECONDS_PER_ROUND: 10,
+    LOADING_SCREEN_TIME: 2200,
+    SKIPS_PER_ROUND: 3
 }
 
 export default AppConstants

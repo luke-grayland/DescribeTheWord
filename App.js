@@ -1,4 +1,3 @@
-import { Linking, Platform } from 'react-native';
 import HomeScreen from "./screens/HomeScreen/HomeScreen";
 import InfoScreen from "./screens/InfoScreen/InfoScreen";
 import {NavigationContainer} from "@react-navigation/native";
@@ -7,60 +6,27 @@ import CategoryScreen from "./screens/CategoryScreen/CategoryScreen";
 import LoadingScreen from "./screens/LoadingScreen/LoadingScreen";
 import PlayScreen from "./screens/PlayScreen/PlayScreen";
 import ResultsScreen from "./screens/ResultsScreen/ResultsScreen";
-import React, {useCallback} from "react";
+import React from "react";
 import { CategoryProvider } from "./context/CategoryContext";
 import {ScoreProvider} from "./context/ScoreContext";
 import {WordsProvider} from "./context/WordsContext";
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {RoundProvider} from "./context/RoundContext";
+import { useFonts } from 'expo-font';
 
 const Stack = createNativeStackNavigator();
-// const PERSISTENCE_KEY = 'NAVIGATION_STATE_V1';
 
 export default function App() {
 
-    // const [isReady, setIsReady] = React.useState(false);
-    // const [initialState, setInitialState] = React.useState();
-
-    // React.useEffect(() => {
-    //     const restoreState = async () => {
-    //         try {
-    //             const initialUrl = await Linking.getInitialURL();
-    //
-    //             if (Platform.OS !== 'web' && initialUrl == null) {
-    //                 // Only restore state if there's no deep link and we're not on web
-    //                 const savedStateString = await AsyncStorage.getItem(PERSISTENCE_KEY);
-    //                 const state = savedStateString ? JSON.parse(savedStateString) : undefined;
-    //
-    //                 if (state !== undefined) {
-    //                     setInitialState(state);
-    //                 }
-    //             }
-    //         } finally {
-    //             setIsReady(true);
-    //         }
-    //     };
-    //
-    //     if (!isReady) {
-    //         restoreState();
-    //     }
-    // }, [isReady]);
-    //
-    // if (!isReady) {
-    //     return null;
-    // }
+    const [fontsLoaded] = useFonts({
+        'Raleway': require('./resources/fonts/Raleway_Variable.ttf'),
+    });
 
     return (
         <CategoryProvider>
             <ScoreProvider>
                 <WordsProvider>
                     <RoundProvider>
-                        <NavigationContainer
-                            // initialState={initialState}
-                            // onStateChange={(state) =>
-                            //     AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(state))
-                            // }
-                        >
+                        <NavigationContainer>
                             <Stack.Navigator intialRouteName="Home"
                                              screenOptions={{
                                                  headerTitleAlign: 'center',

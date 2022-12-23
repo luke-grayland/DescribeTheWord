@@ -13,11 +13,13 @@ import {useIsFocused} from "@react-navigation/native";
 import {setRandomCategory} from "./CategoryHelper";
 
 const CategoryScreen = ({ navigation }) => {
-
     const category = useCategory()
     const updateCategory = useSetCategory()
     const allCategories = useAllCategories()
     const isFocused = useIsFocused()
+
+
+
 
     useEffect( () => {
         if (isFocused)
@@ -28,24 +30,23 @@ const CategoryScreen = ({ navigation }) => {
         <View style={CategoryScreenStyles.categoryScreenView}>
             <View style={{
                 ...TitleStyles.titleView,
-                ...CategoryScreenStyles.categoryScreenSection
+                ...CategoryScreenStyles.categoryScreenTop
             }}>
                 <Title title={AppConstants.CATEGORY_SCREEN_HEADER}
                        fontSize={Fonts.H2_FONT_SIZE}>
                 </Title>
             </View>
             <View style={{
-                ...CategoryScreenStyles.categoryScreenSection,
-                ...CategoryScreenStyles.categoryWordResult,
+                ...CategoryScreenStyles.categoryScreenMiddle,
                 ...GenericStyles.shadow
             }}>
                 <Title title={category} fontSize={Fonts.H1_FONT_SIZE}></Title>
             </View>
-            <View style={CategoryScreenStyles.categoryScreenSection}>
+            <View style={CategoryScreenStyles.categoryScreenBottom}>
                 <PlayStartButton label={"Start"}
                                  navigation={navigation}
                                  target={RouteNames.LOADING_SCREEN}
-                                 style={CategoryScreenStyles.categoryScreenSection}/>
+                                 />
             </View>
         </View>
     )
