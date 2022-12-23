@@ -23,7 +23,7 @@ const ResultsScreen = ({ navigation }) => {
     return (
         <View style={ResultsScreenStyles.resultsScreenView}>
             <View style={{...ResultsScreenStyles.content, ...GenericStyles.shadow}}>
-                <View style={{...TitleStyles.titleView, ...ResultsScreenStyles.subContent}}>
+                <View style={{...TitleStyles.titleView}}>
                     <Title title={AppConstants.RESULTS_TITLE}
                            style={TitleStyles.title}
                            fontSize={Fonts.H2_FONT_SIZE}/>

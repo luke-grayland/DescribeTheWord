@@ -20,13 +20,8 @@ const AppConstants = {
     //UI
     VIBRATION_TIME: 50,
 
-    //Categories
-    CATEGORY_OBJECT: 'object',
-    CATEGORY_PEOPLE: 'people',
-    CATEGORY_WORLD: 'world',
-
     //Settings
-    SECONDS_PER_ROUND: 10,
+    SECONDS_PER_ROUND: 60,
     LOADING_SCREEN_TIME: 2200,
     SKIPS_PER_ROUND: 3
 }
