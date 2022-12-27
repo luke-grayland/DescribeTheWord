@@ -25,7 +25,6 @@ const PlayScreen = ({ navigation }) => {
     let catLength = allWords.length
     const [skipAvailable, setSkipAvailable] = useState(true)
     const [skipsLeft, setSkipsLeft] = useState()
-
     const roundComplete = useRound()
 
     useEffect(() => {
@@ -34,8 +33,10 @@ const PlayScreen = ({ navigation }) => {
         nextWord(catLength, allWords, setWord)
     }, [])
 
-    if (roundComplete)
-        navigation.navigate(RouteNames.RESULTS_SCREEN)
+    useEffect(() => {
+        if (roundComplete)
+            navigation.navigate(RouteNames.RESULTS_SCREEN)
+    }, [roundComplete])
 
     return (
         <View style={PlayScreenStyles.playScreenView}>

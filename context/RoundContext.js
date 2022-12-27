@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from 'react'
+import React, {createContext, useContext, useEffect, useState} from 'react'
 
 const RoundContext = createContext()
 const SetRoundContext = createContext()
@@ -16,7 +16,12 @@ export function RoundProvider({ children }) {
     const [roundComplete, setRoundComplete] = useState(false)
 
     function setRound(roundComplete) {
-        setRoundComplete(roundComplete)
+
+
+
+            setRoundComplete(roundComplete)
+
+
     }
 
     return (

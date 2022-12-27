@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Fonts from "../../resources/Fonts";
 import Title from "../Title/Title";
 import AppConstants from "../../resources/AppConstants";
@@ -15,8 +15,10 @@ const Timer = () => {
         }, 1000)
     }
 
-    if (timer < 1)
-        setRoundComplete(true)
+    useEffect(() => {
+        if (timer < 1)
+            setRoundComplete(true)
+    }, [timer])
 
     return(
         <Title title={timer + "s"} fontSize={Fonts.H1_FONT_SIZE}/>
