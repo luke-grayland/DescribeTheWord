@@ -5,9 +5,11 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
+    "icon": "./resources/images/icon.png",
     "splash": {
+      "image": "./resources/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FF76C1"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -20,11 +22,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./resources/images/adaptive-icon.png",
+        "backgroundColor": "#FF76C1"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./resources/images/icon.png"
     }
   }
 }

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Image, Animated} from "react-native";
+import {View, Image, Animated, BackHandler} from "react-native";
 import {LoadingScreenStyles} from "./LoadingScreenStyles";
 import {useSetAllWords} from "../../context/WordsContext";
 import {useCategory} from "../../context/CategoryContext";
@@ -10,6 +10,7 @@ import {getWordsByCategory, toggleVisible} from "./LoadingHelper";
 import AppConstants from "../../resources/AppConstants";
 import FadeInOut from "react-native-fade-in-out";
 import RouteNames from "../../resources/RouteNames";
+
 
 const LoadingScreen = ({ navigation }) => {
     const setWords = useSetAllWords()
@@ -36,6 +37,8 @@ const LoadingScreen = ({ navigation }) => {
         setTimeout(() => {
             setFadeOut(!fadeOut)
         }, (AppConstants.LOADING_SCREEN_TIME * 0.925))
+
+
 
     }, [])
 
