@@ -12,7 +12,7 @@ export const LoadingScreenStyles = StyleSheet.create({
         alignItems: 'center',
         height: '50%',
         flex: 1,
-        marginBottom: '30%'
+        marginBottom: '30%',
     },
     titleView: {
         height: '50%',

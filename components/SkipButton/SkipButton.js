@@ -31,7 +31,7 @@ const SkipButton = ({nextWord,
                     style={{...SkipButtonStyles.activeButton, ...GenericStyles.shadow}}
                     onPress={click}
                 >
-                    <Image source={require('../../resources/images/skipIcon2.png')}
+                    <Image source={require('../../resources/images/skipIcon3.png')}
                            style={SkipButtonStyles.icon}/>
                 </TouchableOpacity>
             }
@@ -40,7 +40,7 @@ const SkipButton = ({nextWord,
                     style={{...SkipButtonStyles.disabledButton, ...GenericStyles.shadow}}
                     activeOpacity={1}
                 >
-                    <Image source={require('../../resources/images/skipIcon2.png')}
+                    <Image source={require('../../resources/images/skipIcon3.png')}
                            style={SkipButtonStyles.icon}/>
                 </TouchableOpacity>
             }

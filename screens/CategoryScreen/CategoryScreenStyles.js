@@ -23,6 +23,9 @@ export const CategoryScreenStyles = StyleSheet.create({
         borderWidth: AppConstants.BORDER_WIDTH_LARGE,
         borderColor: Colours.WHITE,
         borderStyle: "solid",
+        minHeight: '30%',
+        justifyContent: 'center'
+
     },
     text: {
         fontSize: Fonts.H2_FONT_SIZE,

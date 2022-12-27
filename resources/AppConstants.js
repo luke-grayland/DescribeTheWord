@@ -21,8 +21,8 @@ const AppConstants = {
     VIBRATION_TIME: 50,
 
     //Settings
-    SECONDS_PER_ROUND: 60,
-    LOADING_SCREEN_TIME: 2200,
+    SECONDS_PER_ROUND: 10,
+    LOADING_SCREEN_TIME: 2000,
     SKIPS_PER_ROUND: 3
 }
 

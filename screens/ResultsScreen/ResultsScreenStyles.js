@@ -1,6 +1,7 @@
 import {StyleSheet} from "react-native";
 import Colours from "../../resources/Colours";
 import AppConstants from "../../resources/AppConstants";
+import Fonts from "../../resources/Fonts";
 
 export const ResultsScreenStyles = StyleSheet.create({
     resultsScreenView: {
@@ -37,6 +38,11 @@ export const ResultsScreenStyles = StyleSheet.create({
         borderColor: Colours.WHITE,
         flex: 1,
         minHeight: '5%'
-
+    },
+    nextRoundText: {
+        color: Colours.WHITE,
+        textAlign: 'center',
+        fontSize: Fonts.H3_FONT_SIZE,
+        fontWeight: 'bold',
     }
 })

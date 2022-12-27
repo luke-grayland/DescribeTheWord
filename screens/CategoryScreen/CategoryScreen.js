@@ -18,9 +18,6 @@ const CategoryScreen = ({ navigation }) => {
     const allCategories = useAllCategories()
     const isFocused = useIsFocused()
 
-
-
-
     useEffect( () => {
         if (isFocused)
             setRandomCategory(allCategories, updateCategory)

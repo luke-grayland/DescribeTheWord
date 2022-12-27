@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {View} from "react-native";
+import {Text, View} from "react-native";
 import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title/Title.js';
 import RouteNames from "../../resources/RouteNames";
 import {ResultsScreenStyles} from "./ResultsScreenStyles";
@@ -41,7 +41,8 @@ const ResultsScreen = ({ navigation }) => {
                         <Title title={"Points"} style={TitleStyles.title} fontSize={Fonts.H2_FONT_SIZE}/>
                     </View>
                 </View>
-                <View style={{...ResultsScreenStyles.subContent, ...ResultsScreenStyles.controls}}>
+                <View style={{...ResultsScreenStyles.controls}}>
+                    <Text style={ResultsScreenStyles.nextRoundText}>Next Round</Text>
                     <PlayAgainButton navigation={navigation} target={RouteNames.CATEGORY_SCREEN}/>
                     <HomeButton navigation={navigation} target={RouteNames.HOME_SCREEN}/>
                 </View>

@@ -16,8 +16,8 @@ export const HomeButtonStyles = StyleSheet.create({
 
     },
     icon: {
-        height: '70%',
-        width: '70%',
+        height: '65%',
+        width: '65%',
         alignSelf: 'center',
     }
 
