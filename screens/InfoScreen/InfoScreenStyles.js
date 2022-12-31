@@ -6,21 +6,19 @@ export const InfoScreenStyles = StyleSheet.create({
     infoScreenView: {
         backgroundColor: Colours.PINK,
         alignItems: 'center',
-        justifyContent: "center",
-        height: '100%'
+        height: '100%',
     },
     titleView: {
-        flex: 0.5,
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        marginBottom: '10%',
     },
     contentView: {
         flex: 4,
         backgroundColor: Colours.LIGHT_BLUE,
         width: '80%',
-        margin: '2%',
         marginBottom: '10%',
-        paddingBottom: '50%',
         flexDirection: 'column',
         padding: '8%',
         borderRadius: AppConstants.BORDER_RADIUS_LARGE,
@@ -29,15 +27,14 @@ export const InfoScreenStyles = StyleSheet.create({
         borderWidth: AppConstants.BORDER_WIDTH_LARGE,
     },
     text: {
-        fontSize: 15,
+        fontSize: 16,
         textAlign: "center",
         color: Colours.WHITE
     },
     exitButtonView: {
-        flex: 0.2,
+        flex: 0.1,
         width: '80%',
-        justifyContent: "flex-end",
-        alignItems: 'flex-start',
-        marginTop: '15%',
+        margin: '8%',
+        justifyContent: 'flex-end',
     },
 })
