@@ -1,15 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {View, Image, Animated, BackHandler} from "react-native";
+import {View, Image} from "react-native";
 import {LoadingScreenStyles} from "./LoadingScreenStyles";
 import {useSetAllWords} from "../../context/WordsContext";
 import {useCategory} from "../../context/CategoryContext";
 import {HomeScreenStyles} from "../HomeScreen/HomeScreenStyles";
 import {useSetRound} from "../../context/RoundContext";
-import Config from "../../config/config";
 import {getWordsByCategory, toggleVisible} from "./LoadingHelper";
 import AppConstants from "../../resources/AppConstants";
 import FadeInOut from "react-native-fade-in-out";
-import RouteNames from "../../resources/RouteNames";
 
 
 const LoadingScreen = ({ navigation }) => {
@@ -23,15 +21,9 @@ const LoadingScreen = ({ navigation }) => {
         toggleVisible(visible, setVisible)
     }, [fadeOut])
 
-    // useEffect(() => {
-    //         navigation.addListener('beforeRemove', (e) => {
-    //             e.preventDefault()
-    //         })
-    // }, [navigation])
-
     useEffect(() => {
         toggleVisible(visible, setVisible)
-        getWordsByCategory(Config.IP_ADDRESS, Config.PORT, category, navigation, setWords)
+        getWordsByCategory(category, navigation, setWords)
         setRound(false)
 
         setTimeout(() => {

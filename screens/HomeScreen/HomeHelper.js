@@ -1,7 +1,7 @@
 import Config from "../../config/config";
 
-export const fetchCategories = (ipAddress, port, setAllCategories) => {
-    fetch(`${ipAddress}:${port}/categories`)
+export const fetchCategories = (setAllCategories) => {
+    fetch(`${Config.API_ADDRESS}/categories`)
         .then(response => {
             if (response.ok) {
                 return response.json()

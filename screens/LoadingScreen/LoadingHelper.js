@@ -1,15 +1,12 @@
 import Config from "../../config/config";
 import RouteNames from "../../resources/RouteNames";
 import AppConstants from "../../resources/AppConstants";
-import {Animated} from "react-native";
 
 export const getWordsByCategory = (
-    ipAddress,
-    port,
     category,
     navigation,
     setWords) => {
-    fetch(`${Config.IP_ADDRESS}:${Config.PORT}/words/${category}`)
+    fetch(`${Config.API_ADDRESS}/words/${category}`)
         .then(response => {
             if (response.ok)
                 return response.json()

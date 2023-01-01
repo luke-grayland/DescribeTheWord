@@ -7,14 +7,13 @@ import RouteNames from "../../resources/RouteNames";
 import {TitleStyles} from "../../components/Title/TitleStyles";
 import InfoCircle from "../../components/InfoCircle/InfoCircle";
 import {useSetAllCategories} from "../../context/CategoryContext";
-import Config from "../../config/config";
 import {fetchCategories} from "./HomeHelper";
 
 const HomeScreen = ({navigation}) => {
     const setAllCategories = useSetAllCategories()
 
     useEffect( () => {
-        fetchCategories(Config.IP_ADDRESS, Config.PORT, setAllCategories)
+        fetchCategories(setAllCategories)
     }, [])
 
     return (
