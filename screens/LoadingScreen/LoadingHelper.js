@@ -6,7 +6,7 @@ export const getWordsByCategory = (
     category,
     navigation,
     setWords) => {
-    fetch(`${Config.API_ADDRESS}/words/${category}`)
+    fetch(`${Config.API_ADDRESS}/words/${category.toLowerCase()}`)
         .then(response => {
             if (response.ok)
                 return response.json()

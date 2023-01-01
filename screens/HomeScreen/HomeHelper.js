@@ -10,7 +10,6 @@ export const fetchCategories = (setAllCategories) => {
         })
         .then(response => {
             let categories = []
-
             for (let i = 0; i < Object.keys(response.data).length; i++)
                 categories[i] = response.data[i]
 
