@@ -11,7 +11,8 @@ export const SkipButtonStyles = StyleSheet.create({
         justifyContent: 'center',
         borderStyle: 'solid',
         borderWidth: AppConstants.BORDER_WIDTH_SMALL,
-        borderColor: Colours.WHITE
+        borderColor: Colours.WHITE,
+        margin: '2%'
     },
     disabledButton: {
         height: 100,
@@ -21,7 +22,8 @@ export const SkipButtonStyles = StyleSheet.create({
         justifyContent: 'center',
         borderStyle: 'solid',
         borderWidth: AppConstants.BORDER_WIDTH_SMALL,
-        borderColor: Colours.WHITE
+        borderColor: Colours.WHITE,
+        margin: '2%'
     },
     icon: {
         height: '80%',

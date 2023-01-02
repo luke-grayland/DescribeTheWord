@@ -9,7 +9,6 @@ import {getWordsByCategory, toggleVisible} from "./LoadingHelper";
 import AppConstants from "../../resources/AppConstants";
 import FadeInOut from "react-native-fade-in-out";
 
-
 const LoadingScreen = ({ navigation }) => {
     const setWords = useSetAllWords()
     const category = useCategory()
@@ -28,10 +27,7 @@ const LoadingScreen = ({ navigation }) => {
 
         setTimeout(() => {
             setFadeOut(!fadeOut)
-        }, (AppConstants.LOADING_SCREEN_TIME * 0.925))
-
-
-
+        }, (AppConstants.LOADING_SCREEN_TIME * 0.95))
     }, [])
 
     return (

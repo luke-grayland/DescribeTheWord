@@ -21,15 +21,19 @@ export const PlayScreenStyles = StyleSheet.create({
         alignItems: 'center',
         padding: '5%',
         marginTop: '15%',
-
     },
     topOfContent: {
         justifyContent: 'center',
+        flex: 2,
+        width: '80%',
+        marginBottom: '8%'
     },
-    score: {
+    skipsLeft: {
         textAlign: 'center',
+        flex: 1
     },
     word: {
+        flex: 3,
         height: '50%',
         width: '95%',
         padding: '5%',
@@ -37,9 +41,14 @@ export const PlayScreenStyles = StyleSheet.create({
         borderStyle: 'solid',
         borderWidth: AppConstants.BORDER_WIDTH_LARGE,
         borderColor: Colours.WHITE,
-
     },
     category: {
-        width: '50%'
+        width: '50%',
+        flex: 1
+    },
+    buttonView: {
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'center'
     }
 })

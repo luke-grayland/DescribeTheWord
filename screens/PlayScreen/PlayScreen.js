@@ -44,18 +44,18 @@ const PlayScreen = ({ navigation }) => {
                 <View style={PlayScreenStyles.topOfContent}>
                     <View style={{
                         ...GenericStyles.contentBox,
-                        ...PlayScreenStyles.score
+                        ...PlayScreenStyles.skipsLeft
                     }}>
-                        <Title title={`Score: ${score}`}
-                               fontSize={Fonts.H2_FONT_SIZE}/>
+                        <Title title={`${AppConstants.SKIPS_LEFT}: ${skipsLeft}`}
+                               fontSize={Fonts.H3_FONT_SIZE}/>
                     </View>
-                    <View style={{
-                        ...GenericStyles.contentBox
-                    }}>
+                    <View>
                         <Timer/>
                     </View>
                 </View>
-                <Title title={category} fontSize={Fonts.H3_FONT_SIZE}/>
+                <View style={PlayScreenStyles.category}>
+                    <Title title={category} fontSize={Fonts.H3_FONT_SIZE}/>
+                </View>
                 <View style={{
                     ...GenericStyles.contentBox,
                     ...GenericStyles.shadow,
@@ -63,23 +63,28 @@ const PlayScreen = ({ navigation }) => {
                 }}>
                     <Title title={word} fontSize={Fonts.H1_FONT_SIZE}/>
                 </View>
-                <Title title={`${AppConstants.SKIPS_LEFT}: ${skipsLeft}`} fontSize={Fonts.H3_FONT_SIZE}/>
             </View>
             <View style={PlayScreenStyles.controls}>
-                <SkipButton nextWord={nextWord}
-                            catLength={catLength}
-                            allWords={allWords}
-                            setWord={setWord}
-                            setSkipAvailable={setSkipAvailable}
-                            skipAvailable={skipAvailable}
-                            skipsLeft={skipsLeft}
-                            setSkipsLeft={setSkipsLeft}
-                />
-                <CorrectButton nextWord={nextWord}
-                               catLength={catLength}
-                               allWords={allWords}
-                               setWord={setWord}
-                />
+                <View style={PlayScreenStyles.buttonView}>
+                    <SkipButton nextWord={nextWord}
+                                catLength={catLength}
+                                allWords={allWords}
+                                setWord={setWord}
+                                setSkipAvailable={setSkipAvailable}
+                                skipAvailable={skipAvailable}
+                                skipsLeft={skipsLeft}
+                                setSkipsLeft={setSkipsLeft}
+                    />
+                    <Title title={"Skip"} fontSize={Fonts.H3_FONT_SIZE}/>
+                </View>
+                <View style={PlayScreenStyles.buttonView}>
+                    <CorrectButton nextWord={nextWord}
+                                   catLength={catLength}
+                                   allWords={allWords}
+                                   setWord={setWord}
+                    />
+                    <Title title={"Got it"} fontSize={Fonts.H3_FONT_SIZE}/>
+                </View>
             </View>
         </View>
     )
