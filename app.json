@@ -25,7 +25,8 @@
         "foregroundImage": "./resources/images/adaptive-icon.png",
         "backgroundColor": "#FF76C1"
       },
-      "package": "com.lazygray.DescribeTheWord"
+      "package": "com.lazygray.DescribeTheWord",
+      "versionCode": 2
     },
     "web": {
       "favicon": "./resources/images/icon.png"
