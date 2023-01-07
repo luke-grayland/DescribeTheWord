@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, ScrollView, SafeAreaView} from "react-native";
-import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title/Title.js';
+import Title from '../../components/Title/Title'
 import {InfoScreenStyles} from "./InfoScreenStyles";
 import Fonts from "../../resources/Fonts";
 import AppConstants from "../../resources/AppConstants";

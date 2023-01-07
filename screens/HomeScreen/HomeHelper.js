@@ -1,7 +1,5 @@
-import Config from "../../config/config";
-
 export const fetchCategories = (setAllCategories) => {
-    fetch(`${Config.API_ADDRESS}/categories`)
+    fetch('https://us-central1-describetheword-808.cloudfunctions.net/app/categories')
         .then(response => {
             if (response.ok) {
                 return response.json()

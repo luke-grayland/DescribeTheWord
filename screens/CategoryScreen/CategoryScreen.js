@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {View} from "react-native";
-import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title/Title.js';
+import Title from '../../components/Title/Title'
 import PlayStartButton from "../../components/PlayStartButton/PlayStartButton";
 import RouteNames from "../../resources/RouteNames";
 import AppConstants from "../../resources/AppConstants";

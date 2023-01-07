@@ -24,10 +24,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./resources/images/adaptive-icon.png",
         "backgroundColor": "#FF76C1"
-      }
+      },
+      "package": "com.lazygray.DescribeTheWord"
     },
     "web": {
       "favicon": "./resources/images/icon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "aaaa8676-ff5a-4f26-a460-072318e52a1f"
+      }
     }
   }
 }

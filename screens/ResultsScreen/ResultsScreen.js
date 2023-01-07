@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {Text, View} from "react-native";
-import Title from '/Users/lukegrayland/Projects/DescribeTheWord/components/Title/Title.js';
+import Title from '../../components/Title/Title'
 import RouteNames from "../../resources/RouteNames";
 import {ResultsScreenStyles} from "./ResultsScreenStyles";
 import {GenericStyles} from "../../resources/GenericStyles";

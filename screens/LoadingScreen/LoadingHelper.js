@@ -1,12 +1,8 @@
-import Config from "../../config/config";
 import RouteNames from "../../resources/RouteNames";
 import AppConstants from "../../resources/AppConstants";
 
-export const getWordsByCategory = (
-    category,
-    navigation,
-    setWords) => {
-    fetch(`${Config.API_ADDRESS}/words/${category.toLowerCase()}`)
+export const getWordsByCategory = (category, navigation, setWords) => {
+    fetch(`https://us-central1-describetheword-808.cloudfunctions.net/app/words/${category.toLowerCase()}`)
         .then(response => {
             if (response.ok)
                 return response.json()
