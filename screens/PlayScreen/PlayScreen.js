@@ -16,7 +16,6 @@ import {nextWord} from "./PlayHelper";
 import AppConstants from "../../resources/AppConstants";
 
 const PlayScreen = ({ navigation }) => {
-    const score = useScore()
     const resetScore = useResetScore()
     const category = useCategory()
     const word = useWord()
@@ -47,7 +46,7 @@ const PlayScreen = ({ navigation }) => {
                         ...PlayScreenStyles.skipsLeft
                     }}>
                         <Title title={`${AppConstants.SKIPS_LEFT}: ${skipsLeft}`}
-                               fontSize={Fonts.H3_FONT_SIZE}/>
+                               fontSize={Fonts.H2_5_FONT_SIZE}/>
                     </View>
                     <View>
                         <Timer/>

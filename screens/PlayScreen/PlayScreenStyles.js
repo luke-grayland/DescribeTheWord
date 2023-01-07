@@ -15,7 +15,7 @@ export const PlayScreenStyles = StyleSheet.create({
         margin: '10%',
     },
     content: {
-        flex: 4,
+        flex: 3,
         flexDirection: 'column',
         justifyContent: 'space-evenly',
         alignItems: 'center',
@@ -26,11 +26,12 @@ export const PlayScreenStyles = StyleSheet.create({
         justifyContent: 'center',
         flex: 2,
         width: '80%',
-        marginBottom: '8%'
+        marginBottom: '8%',
     },
     skipsLeft: {
         textAlign: 'center',
-        flex: 1
+        flex: 1,
+        minHeight: '10%'
     },
     word: {
         flex: 3,
