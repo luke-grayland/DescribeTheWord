@@ -24,5 +24,6 @@ export const LoadingScreenStyles = StyleSheet.create({
     timer: {
         height: 120,
         width: 120,
+        opacity: 0.9
     }
 })

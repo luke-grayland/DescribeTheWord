@@ -27,7 +27,7 @@ const LoadingScreen = ({ navigation }) => {
 
         setTimeout(() => {
             setFadeOut(!fadeOut)
-        }, (AppConstants.LOADING_SCREEN_TIME * 0.95))
+        }, (AppConstants.LOADING_SCREEN_TIME))
     }, [])
 
     return (

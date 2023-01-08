@@ -1,3 +1,5 @@
+import * as SplashScreen from "expo-splash-screen";
+
 export const fetchCategories = (setAllCategories) => {
     fetch('https://us-central1-describetheword-808.cloudfunctions.net/app/categories')
         .then(response => {
@@ -12,6 +14,7 @@ export const fetchCategories = (setAllCategories) => {
                 categories[i] = response.data[i]
 
             setAllCategories(categories)
+            SplashScreen.hideAsync()
         })
         .catch(error => {
             console.error("Error fetching categories data: ", error)

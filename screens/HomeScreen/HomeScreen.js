@@ -12,7 +12,7 @@ import {fetchCategories} from "./HomeHelper";
 const HomeScreen = ({navigation}) => {
     const setAllCategories = useSetAllCategories()
 
-    useEffect( () => {
+    useEffect(() => {
         fetchCategories(setAllCategories)
     }, [])
 
