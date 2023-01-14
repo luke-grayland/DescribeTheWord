@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {View, Image} from "react-native";
+import {View, Image, Animated, Easing} from "react-native";
 import {LoadingScreenStyles} from "./LoadingScreenStyles";
 import {useSetAllWords} from "../../context/WordsContext";
 import {useCategory} from "../../context/CategoryContext";
 import {HomeScreenStyles} from "../HomeScreen/HomeScreenStyles";
 import {useSetRound} from "../../context/RoundContext";
-import {getWordsByCategory, toggleVisible} from "./LoadingHelper";
-import AppConstants from "../../resources/AppConstants";
+import {getSpin, getWordsByCategory, toggleVisible} from "./LoadingHelper";
 import FadeInOut from "react-native-fade-in-out";
 
 const LoadingScreen = ({ navigation }) => {
@@ -15,20 +14,17 @@ const LoadingScreen = ({ navigation }) => {
     const setRound = useSetRound()
     const [visible, setVisible] = useState(false)
     const [fadeOut, setFadeOut] = useState(true)
+    const spin = getSpin()
+
+    useEffect(() => {
+        toggleVisible(visible, setVisible)
+        getWordsByCategory(category, navigation, setWords, setFadeOut, fadeOut)
+        setRound(false)
+    }, [])
 
     useEffect(() => {
         toggleVisible(visible, setVisible)
     }, [fadeOut])
-
-    useEffect(() => {
-        toggleVisible(visible, setVisible)
-        getWordsByCategory(category, navigation, setWords)
-        setRound(false)
-
-        setTimeout(() => {
-            setFadeOut(!fadeOut)
-        }, (AppConstants.LOADING_SCREEN_TIME))
-    }, [])
 
     return (
         <View style={LoadingScreenStyles.loadingScreenView}>
@@ -41,13 +37,14 @@ const LoadingScreen = ({ navigation }) => {
                 <FadeInOut visible={visible}
                            duration={500}
                            scale={true}
-                           rotate={true}>
-                    <Image
-                        style={{
-                            height: 120,
-                            width: 120,
-                        }}
-                        source={require('../../resources/images/sandtimer3.png')} />
+                           rotate={false}>
+                    
+                    <Animated.Image source={require('../../resources/images/loadingIcon.png')}
+                                    style={{
+                                        height: 120,
+                                        width: 120,
+                                        transform: [{rotate: spin}]
+                                    }} />
                 </FadeInOut>
             </View>
         </View>
