@@ -11,9 +11,11 @@ export const getWordsByCategory = (category, navigation, setWords, setFadeOut, f
             throw response;
         })
         .then(async words => {
-            setWords(words.data)
-            setFadeOut(!fadeOut)
-            navigation.navigate(RouteNames.PLAY_SCREEN)
+            setTimeout(() => {
+                setWords(words.data)
+                setFadeOut(!fadeOut)
+                navigation.navigate(RouteNames.PLAY_SCREEN)
+            }, 500)
         })
         .catch(error => {
             console.error("Error fetching words data: ", error)

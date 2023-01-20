@@ -1,7 +1,7 @@
 const AppConstants = {
 
     //Strings
-    GAME_TITLE: 'Guess the Word!',
+    GAME_TITLE: 'Guess the WordWithWrap!',
     PLAY_BUTTON: 'Play',
     INFO_BUTTON_ICON: '?',
     INFO: 'Info',

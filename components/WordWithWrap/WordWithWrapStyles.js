@@ -2,8 +2,8 @@ import {StyleSheet} from "react-native";
 import Fonts from "../../resources/Fonts";
 import Colours from "../../resources/Colours";
 
-export const TitleStyles = StyleSheet.create({
-    titleView: {
+export const WordWithWrapStyles = StyleSheet.create({
+    wordView: {
         flexDirection: 'row',
         alignItems: 'center',
         alignSelf: 'center',
@@ -11,7 +11,6 @@ export const TitleStyles = StyleSheet.create({
     },
     title: {
         fontWeight: 'bold',
-        fontSize: Fonts.H1_FONT_SIZE,
         color: 'white',
         textAlign: 'center',
     }

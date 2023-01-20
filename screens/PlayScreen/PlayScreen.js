@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {View} from "react-native";
 import RouteNames from "../../resources/RouteNames";
 import {PlayScreenStyles} from "./PlayScreenStyles"
@@ -12,8 +12,10 @@ import {useCategory} from "../../context/CategoryContext";
 import {useAllWords, useSetWord, useWord} from "../../context/WordsContext";
 import Timer from "../../components/Timer/Timer";
 import {useRound} from "../../context/RoundContext";
-import {nextWord} from "./PlayHelper";
+import {getLongestWordLength, nextWord} from "./PlayHelper";
 import AppConstants from "../../resources/AppConstants";
+import Word from "../../components/Word/Word";
+import WordWithWrap from "../../components/WordWithWrap/WordWithWrap";
 
 const PlayScreen = ({ navigation }) => {
     const resetScore = useResetScore()
@@ -25,17 +27,32 @@ const PlayScreen = ({ navigation }) => {
     const [skipAvailable, setSkipAvailable] = useState(true)
     const [skipsLeft, setSkipsLeft] = useState()
     const roundComplete = useRound()
+    const [longestWordLength, setLongestWordLength] = useState(0)
+    const [multiLineText, setMultiLineText] = useState(false)
 
     useEffect(() => {
         resetScore()
         setSkipsLeft(AppConstants.SKIPS_PER_ROUND)
-        nextWord(catLength, allWords, setWord)
+        nextWord(catLength, allWords, setWord, setLongestWordLength, longestWordLength)
     }, [])
 
     useEffect(() => {
         if (roundComplete)
             navigation.navigate(RouteNames.RESULTS_SCREEN)
     }, [roundComplete])
+
+    useEffect(() => {
+        if (word != null) {
+            let length = getLongestWordLength(word)
+            setLongestWordLength(length)
+        }
+    }, [word])
+
+    useEffect(() => {
+        longestWordLength > 9
+            ? setMultiLineText(false)
+            : setMultiLineText(true)
+    }, [longestWordLength])
 
     return (
         <View style={PlayScreenStyles.playScreenView}>
@@ -60,7 +77,11 @@ const PlayScreen = ({ navigation }) => {
                     ...GenericStyles.shadow,
                     ...PlayScreenStyles.word
                 }}>
-                    <Title title={word} fontSize={Fonts.H1_FONT_SIZE}/>
+                    {multiLineText
+                        ? <WordWithWrap word={word}/>
+                        : <Word word={word}/>
+                    }
+
                 </View>
             </View>
             <View style={PlayScreenStyles.controls}>
