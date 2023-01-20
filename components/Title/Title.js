@@ -10,8 +10,7 @@ const Title = ({title, fontSize}) => {
                 fontSize
             }}
                   adjustsFontSizeToFit={true}
-                  numberOfLines={3}
-            >
+                  numberOfLines={3}>
                 {title}
             </Text>
         </View>

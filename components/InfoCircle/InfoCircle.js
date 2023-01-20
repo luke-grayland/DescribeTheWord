@@ -18,8 +18,7 @@ const InfoCircle = ({ navigation }) => {
                     }}
                 onPress={click}>
                 <Image source={require("../../resources/images/infoIconWhite.png")}
-                       style={InfoCircleStyles.infoIcon}
-                ></Image>
+                       style={InfoCircleStyles.infoIcon}/>
             </TouchableOpacity>
         </View>
     )

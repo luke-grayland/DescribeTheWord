@@ -11,7 +11,6 @@ import {GenericStyles} from "../../resources/GenericStyles";
 import {useAllCategories, useCategory, useSetCategory} from "../../context/CategoryContext";
 import {useIsFocused} from "@react-navigation/native";
 import {setRandomCategory} from "./CategoryHelper";
-import {useAuthToken} from "../../context/AuthContext";
 
 const CategoryScreen = ({ navigation }) => {
     const category = useCategory()

@@ -11,7 +11,6 @@ export const HomeScreenStyles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         paddingBottom: '15%'
-
     },
     logo: {
         width: '90%',

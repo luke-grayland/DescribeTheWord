@@ -35,6 +35,5 @@ export const CategoryScreenStyles = StyleSheet.create({
     headerText: {
         color: Colours.GREEN,
     }
-
 })
 

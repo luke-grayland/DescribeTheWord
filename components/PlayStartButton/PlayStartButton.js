@@ -1,18 +1,12 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, Image} from "react-native";
+import {View, Text, TouchableOpacity} from "react-native";
 import {PlayStartButtonStyles} from "./PlayStartButtonStyles";
 import {GenericStyles} from "../../resources/GenericStyles";
-import {useFonts} from "expo-font";
 
 const PlayStartButton = ({ navigation, label, target }) => {
     const handleStartButton = () => {
         navigation.navigate(target)
     }
-
-    // const [fontsLoaded] = useFonts({
-    //     'Raleway': require('../../resources/fonts/Raleway_Variable.ttf'),
-    // });
-
     return (
         <View>
             <TouchableOpacity style={{

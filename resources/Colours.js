@@ -5,7 +5,6 @@ const Colours = {
     INFO_BUTTON: '#A460ED',
     TEXT: '#9FC9F3',
     DISABLED_BUTTON: "#8B8B8B",
-
     PINK: '#FF76C1',
     LIGHT_BLUE: '#56B6E6',
     PURPLE: '#9900FF',

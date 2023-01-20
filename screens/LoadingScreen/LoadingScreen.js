@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Image, Animated, Easing} from "react-native";
+import {View, Image, Animated} from "react-native";
 import {LoadingScreenStyles} from "./LoadingScreenStyles";
 import {useSetAllWords} from "../../context/WordsContext";
 import {useCategory} from "../../context/CategoryContext";

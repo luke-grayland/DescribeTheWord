@@ -19,5 +19,4 @@ export const PlayAgainButtonStyles = StyleSheet.create({
         width: '70%',
         alignSelf: 'center',
     }
-
 })

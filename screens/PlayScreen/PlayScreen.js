@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View} from "react-native";
 import RouteNames from "../../resources/RouteNames";
 import {PlayScreenStyles} from "./PlayScreenStyles"

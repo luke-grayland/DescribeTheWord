@@ -13,7 +13,6 @@ export const ExitButtonStyles = StyleSheet.create({
         borderStyle: "solid",
         borderWidth: AppConstants.BORDER_WIDTH_SMALL,
         borderColor: 'white',
-
     },
     exitIcon: {
         height: '100%',

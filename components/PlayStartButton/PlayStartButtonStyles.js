@@ -4,7 +4,6 @@ import Colours from "../../resources/Colours";
 import AppConstants from "../../resources/AppConstants";
 
 export const PlayStartButtonStyles = StyleSheet.create({
-
     button: {
         height: 60,
         width: 190,
@@ -18,7 +17,6 @@ export const PlayStartButtonStyles = StyleSheet.create({
         borderStyle: 'solid',
         borderWidth: AppConstants.BORDER_WIDTH_SMALL,
         borderColor: Colours.WHITE,
-
     },
     text: {
         fontSize: Fonts.H2_FONT_SIZE,
@@ -26,5 +24,5 @@ export const PlayStartButtonStyles = StyleSheet.create({
         alignSelf: 'center',
         fontWeight: "bold",
         color: Colours.WHITE
-    },
+    }
 })

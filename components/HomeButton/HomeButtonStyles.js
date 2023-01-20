@@ -13,12 +13,10 @@ export const HomeButtonStyles = StyleSheet.create({
         borderStyle: 'solid',
         borderColor: Colours.WHITE,
         borderWidth: AppConstants.BORDER_WIDTH_SMALL
-
     },
     icon: {
         height: '65%',
         width: '65%',
         alignSelf: 'center',
     }
-
 })

@@ -15,7 +15,6 @@ export const InfoCircleStyles = StyleSheet.create({
         borderStyle: "solid",
         borderWidth: AppConstants.BORDER_WIDTH_SMALL,
         borderColor: 'white'
-
     },
     text: {
         fontSize: Fonts.H2_FONT_SIZE,

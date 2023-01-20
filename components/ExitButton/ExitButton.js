@@ -18,8 +18,7 @@ const ExitButton = ({ navigation }) => {
                 }}
                 onPress={click}>
                 <Image source={require("../../resources/images/exit_icon.png")}
-                       style={ExitButtonStyles.exitIcon}
-                ></Image>
+                       style={ExitButtonStyles.exitIcon}/>
             </TouchableOpacity>
         </View>
     )

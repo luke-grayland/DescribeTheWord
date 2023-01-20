@@ -19,7 +19,7 @@ const SkipButton = ({nextWord,
             nextWord(catLength, allWords, setWord)
             setSkipsLeft(skipsLeft - 1)
 
-            if (skipsLeft == 1)
+            if (skipsLeft === 1)
                 setSkipAvailable(false)
         }
     }
@@ -29,8 +29,7 @@ const SkipButton = ({nextWord,
             {skipAvailable &&
                 <TouchableOpacity
                     style={{...SkipButtonStyles.activeButton, ...GenericStyles.shadow}}
-                    onPress={click}
-                >
+                    onPress={click}>
                     <Image source={require('../../resources/images/skipIcon3.png')}
                            style={SkipButtonStyles.icon}/>
                 </TouchableOpacity>
@@ -38,13 +37,11 @@ const SkipButton = ({nextWord,
             {!skipAvailable &&
                 <TouchableOpacity
                     style={{...SkipButtonStyles.disabledButton, ...GenericStyles.shadow}}
-                    activeOpacity={1}
-                >
+                    activeOpacity={1}>
                     <Image source={require('../../resources/images/skipIcon3.png')}
                            style={SkipButtonStyles.icon}/>
                 </TouchableOpacity>
             }
-
         </View>
     )
 }
