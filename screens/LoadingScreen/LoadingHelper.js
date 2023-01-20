@@ -1,8 +1,10 @@
 import RouteNames from "../../resources/RouteNames";
 import {Animated, Easing} from "react-native";
 
-export const getWordsByCategory = (category, navigation, setWords, setFadeOut, fadeOut) => {
-    fetch(`https://us-central1-describetheword-808.cloudfunctions.net/app/words/${category.toLowerCase()}`)
+export const getWordsByCategory = (category, navigation, setWords, setFadeOut, fadeOut, token) => {
+    fetch(`https://us-central1-describetheword-808.cloudfunctions.net/app/words/${category.toLowerCase()}`, {
+        headers: {authorization: token}
+    })
         .then(response => {
             if (response.ok)
                 return response.json()

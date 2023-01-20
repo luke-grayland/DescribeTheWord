@@ -7,6 +7,7 @@ import {HomeScreenStyles} from "../HomeScreen/HomeScreenStyles";
 import {useSetRound} from "../../context/RoundContext";
 import {getSpin, getWordsByCategory, toggleVisible} from "./LoadingHelper";
 import FadeInOut from "react-native-fade-in-out";
+import {useAuthToken} from "../../context/AuthContext";
 
 const LoadingScreen = ({ navigation }) => {
     const setWords = useSetAllWords()
@@ -15,10 +16,11 @@ const LoadingScreen = ({ navigation }) => {
     const [visible, setVisible] = useState(false)
     const [fadeOut, setFadeOut] = useState(true)
     const spin = getSpin()
+    const token = useAuthToken()
 
     useEffect(() => {
         toggleVisible(visible, setVisible)
-        getWordsByCategory(category, navigation, setWords, setFadeOut, fadeOut)
+        getWordsByCategory(category, navigation, setWords, setFadeOut, fadeOut, token)
         setRound(false)
     }, [])
 

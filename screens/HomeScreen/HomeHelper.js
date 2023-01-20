@@ -1,7 +1,8 @@
 import * as SplashScreen from "expo-splash-screen";
-
-export const fetchCategories = (setAllCategories) => {
-    fetch('https://us-central1-describetheword-808.cloudfunctions.net/app/categories')
+export const fetchCategories = (setAllCategories, token) => {
+    fetch('https://us-central1-describetheword-808.cloudfunctions.net/app/categories', {
+        headers: {authorization: token}
+    })
         .then(response => {
             if (response.ok) {
                 return response.json()
@@ -20,3 +21,4 @@ export const fetchCategories = (setAllCategories) => {
             console.error("Error fetching categories data: ", error)
         })
 }
+

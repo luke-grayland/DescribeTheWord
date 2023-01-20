@@ -7,7 +7,7 @@ import SkipButton from "../../components/SkipButton/SkipButton";
 import {GenericStyles} from "../../resources/GenericStyles";
 import Title from "../../components/Title/Title";
 import Fonts from "../../resources/Fonts";
-import {useResetScore, useScore} from "../../context/ScoreContext";
+import {useResetScore} from "../../context/ScoreContext";
 import {useCategory} from "../../context/CategoryContext";
 import {useAllWords, useSetWord, useWord} from "../../context/WordsContext";
 import Timer from "../../components/Timer/Timer";

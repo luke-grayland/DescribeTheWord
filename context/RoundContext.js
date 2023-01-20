@@ -16,12 +16,7 @@ export function RoundProvider({ children }) {
     const [roundComplete, setRoundComplete] = useState(false)
 
     function setRound(roundComplete) {
-
-
-
             setRoundComplete(roundComplete)
-
-
     }
 
     return (
