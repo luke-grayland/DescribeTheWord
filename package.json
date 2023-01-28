@@ -18,7 +18,6 @@
     "expo-splash-screen": "~0.16.2",
     "expo-status-bar": "~1.4.0",
     "firebase": "^9.15.0",
-    "idb": "^7.1.1",
     "react": "18.0.0",
     "react-native": "0.69.6",
     "react-native-fade-in-out": "^1.0.6",

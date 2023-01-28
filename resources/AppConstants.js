@@ -19,6 +19,7 @@ const AppConstants = {
 
     //UI
     VIBRATION_TIME: 50,
+    LONGEST_WORD_LENGTH: 8,
 
     //Settings
     SECONDS_PER_ROUND: 60,

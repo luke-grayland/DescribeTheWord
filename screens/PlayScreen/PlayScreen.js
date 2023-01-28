@@ -49,7 +49,7 @@ const PlayScreen = ({ navigation }) => {
     }, [word])
 
     useEffect(() => {
-        longestWordLength > 9
+        longestWordLength > AppConstants.LONGEST_WORD_LENGTH
             ? setMultiLineText(false)
             : setMultiLineText(true)
     }, [longestWordLength])

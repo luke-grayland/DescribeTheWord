@@ -8,20 +8,20 @@ import {TitleStyles} from "../../components/Title/TitleStyles";
 import InfoCircle from "../../components/InfoCircle/InfoCircle";
 import {useSetAllCategories} from "../../context/CategoryContext";
 import {fetchCategories} from "./HomeHelper";
-import {firebaseConfig} from "../../firebase";
 import {initializeApp, getApps, getApp} from "firebase/app";
 import {getAuth, signInAnonymously, initializeAuth} from "firebase/auth";
 import { getReactNativePersistence } from 'firebase/auth/react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useSetAuthToken} from "../../context/AuthContext";
+import {firebaseConfig} from "../../firebase";
 
 const HomeScreen = ({navigation}) => {
     const setAllCategories = useSetAllCategories()
     const setAuthToken = useSetAuthToken()
-    const config = firebaseConfig
     let firebaseApp;
     let auth
     let token
+    const config = firebaseConfig
 
     useEffect( () => {
         if (!getApps().length) {
