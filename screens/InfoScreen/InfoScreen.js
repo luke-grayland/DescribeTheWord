@@ -14,7 +14,6 @@ const InfoScreen = ({ navigation }) => {
             <View style={InfoScreenStyles.exitButtonView}>
                 <ExitButton navigation={navigation}/>
             </View>
-
             <ScrollView style={{
                 ...InfoScreenStyles.contentView,
                 ...GenericStyles.shadow
