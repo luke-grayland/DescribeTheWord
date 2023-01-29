@@ -51,6 +51,7 @@ export const PlayScreenStyles = StyleSheet.create({
     buttonView: {
         flexDirection: 'column',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        maxWidth: '50%'
     }
 })

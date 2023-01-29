@@ -2,7 +2,7 @@
   "expo": {
     "name": "Describe The Word",
     "slug": "DescribeTheWord",
-    "version": "1.0.6",
+    "version": "1.0.8",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "icon": "./resources/images/icon.png",
@@ -26,7 +26,7 @@
         "backgroundColor": "#FF76C1"
       },
       "package": "com.lazygray.DescribeTheWord",
-      "versionCode": 6
+      "versionCode": 8
     },
     "web": {
       "favicon": "./resources/images/icon.png"

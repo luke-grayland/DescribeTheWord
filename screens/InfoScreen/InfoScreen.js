@@ -6,6 +6,7 @@ import Fonts from "../../resources/Fonts";
 import AppConstants from "../../resources/AppConstants";
 import {GenericStyles} from "../../resources/GenericStyles";
 import ExitButton from "../../components/ExitButton/ExitButton";
+import Word from '../../components/Word/Word'
 
 const InfoScreen = ({ navigation }) => {
     return (
@@ -21,10 +22,7 @@ const InfoScreen = ({ navigation }) => {
                         showsVerticalScrollIndicator={false}
                         contentContainerStyle={{ flexGrow: 1, minHeight: '55%' }}>
                 <View style={InfoScreenStyles.titleView}>
-                    <Title
-                        title={AppConstants.INFO_SCREEN_HEADER}
-                        fontSize={Fonts.H1_FONT_SIZE}
-                    />
+                    <Word word={AppConstants.INFO_SCREEN_HEADER}/>
                 </View>
                 <View style={{flex: 1, justifyContent: 'center'}}>
                     <Text style={InfoScreenStyles.text}>

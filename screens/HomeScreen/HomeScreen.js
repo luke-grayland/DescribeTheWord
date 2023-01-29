@@ -13,7 +13,7 @@ import {getAuth, signInAnonymously, initializeAuth} from "firebase/auth";
 import { getReactNativePersistence } from 'firebase/auth/react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useSetAuthToken} from "../../context/AuthContext";
-import {firebaseConfig} from "../../firebase";
+import {firebaseConfig} from "../../firebase"
 
 const HomeScreen = ({navigation}) => {
     const setAllCategories = useSetAllCategories()
