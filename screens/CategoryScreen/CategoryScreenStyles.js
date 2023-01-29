@@ -7,6 +7,7 @@ export const CategoryScreenStyles = StyleSheet.create({
     categoryScreenView: {
         flex: 1,
         backgroundColor: Colours.PINK,
+        justifyContent: 'center',
     },
     categoryScreenTop: {
         flexDirection: 'column',
@@ -24,16 +25,14 @@ export const CategoryScreenStyles = StyleSheet.create({
         borderColor: Colours.WHITE,
         borderStyle: "solid",
         minHeight: '30%',
-        justifyContent: 'center'
-
+        justifyContent: 'center',
+        maxWidth: 650,
+        alignSelf: 'center',
     },
     text: {
         fontSize: Fonts.H2_FONT_SIZE,
         color: Colours.WHITE,
-        fontWeight: 'bold'
-    },
-    headerText: {
-        color: Colours.GREEN,
+        fontWeight: 'bold',
     }
 })
 

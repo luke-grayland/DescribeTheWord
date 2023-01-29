@@ -37,7 +37,7 @@ const CategoryScreen = ({ navigation }) => {
                 ...CategoryScreenStyles.categoryScreenMiddle,
                 ...GenericStyles.shadow
             }}>
-                <Title title={category} fontSize={Fonts.H1_FONT_SIZE}></Title>
+                <Title title={category} fontSize={Fonts.H1_FONT_SIZE}/>
             </View>
             <View style={CategoryScreenStyles.categoryScreenBottom}>
                 <PlayStartButton label={"Start"}

@@ -42,6 +42,7 @@ export const PlayScreenStyles = StyleSheet.create({
         borderStyle: 'solid',
         borderWidth: AppConstants.BORDER_WIDTH_LARGE,
         borderColor: Colours.WHITE,
+        maxWidth: 650
     },
     category: {
         width: '50%',

@@ -5,10 +5,7 @@ import {TitleStyles} from "./TitleStyles";
 const Title = ({title, fontSize}) => {
     return (
         <View style={TitleStyles.titleView}>
-            <Text style={{
-                ...TitleStyles.title,
-                fontSize
-            }}
+            <Text style={{...TitleStyles.title, fontSize}}
                   adjustsFontSizeToFit={true}
                   numberOfLines={3}>
                 {title}

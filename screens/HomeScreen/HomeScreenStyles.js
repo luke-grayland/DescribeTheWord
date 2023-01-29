@@ -13,7 +13,8 @@ export const HomeScreenStyles = StyleSheet.create({
         paddingBottom: '15%'
     },
     logo: {
-        width: '90%',
+        width: '80%',
+        maxWidth: 500,
         resizeMode: 'contain',
         justifyContent: 'center'
     },

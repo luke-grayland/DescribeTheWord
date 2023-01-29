@@ -14,5 +14,6 @@ export const TitleStyles = StyleSheet.create({
         fontSize: Fonts.H1_FONT_SIZE,
         color: 'white',
         textAlign: 'center',
+        width: '100%',
     }
 });
